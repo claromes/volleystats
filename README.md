@@ -38,9 +38,6 @@ data/1623_22-10-28_guest_barueri-volleyball-club.csv
 
 # TODO
 
-- scraper
-    - fix 'match_date'
-    - filename lowercase
 - readme
     - complete scraped data list
     - list of each term

@@ -1,5 +1,6 @@
 import scrapy
 import os
+from . import utils
 
 class SuperligaGuestSpider(scrapy.Spider):
     name = 'guest_superliga'
@@ -13,11 +14,10 @@ class SuperligaGuestSpider(scrapy.Spider):
         super().__init__(**kwargs)
 
     def parse(self, response):
-        match_date_1 = response.xpath("normalize-space(//span[@id='Content_Main_LB_DateTime']/text())").get().replace(' ', '')
-        match_date_2 = match_date_1.split(',',1)[1]
-        match_date = match_date_2.split('-')[0]
+        match_date_text = response.xpath("normalize-space(//span[@id='Content_Main_LB_DateTime']/text())").get()
+        match_date = utils.parse_ptbr_date(match_date_text)
 
-        guest_team = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-')
+        guest_team = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-').lower()
         guest_players = response.xpath("//div[@id='Content_Main_ctl17_RP_MatchStats_RPL_MatchStats_0']/div[5]/div/div/table/tbody/tr")
 
         for player in guest_players:
