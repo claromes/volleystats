@@ -67,6 +67,5 @@ data/1623_22-10-28_guest_barueri-volleyball-club.csv
     - [ ] Block Points by player
     - [ ] Totals
 
-
 # License
 [GNU General Public License v3.0](https://github.com/openvb/superscraper/blob/main/LICENSE.md)
