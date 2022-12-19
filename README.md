@@ -1,6 +1,6 @@
 # Matchscraper
 
-Match Statistics by Data Project web scraper
+Matchscraper, a web scraper, provides a CSV format files of volleyball match statistics from the Data Project websites.
 
 # Requirements
 
@@ -13,25 +13,38 @@ $ `git clone git@github.com:openvb/matchscraper.git`
 
 # Usage
 
-python stats.py [Federation Acronym] [Match ID]
+$ `python stats.py [Federation Acronym] [Match ID]`
 
 ## Example
 
-$ `python stats.py cbv 1623`
+- Brazilian Volleyball Confederation
+    - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=1623
+    - Federation Acronym: CBV
+    - Match ID: 1623
+    - Command: $ `python stats.py cbv 1623`
+    - Output:
+        ```
+        data/1623_22-10-28_home_fluminense.csv
+        data/1623_22-10-28_guest_barueri-volleyball-club.csv
+        ```
 
-Output:
+- Lithuanian Volleyball Federation
+    - Data Project website: https://lvf-web.dataproject.com/MatchStatistics.aspx?mID=2093
+    - Federation Acronym: LVF
+    - Match ID: 202
+    - Command: $ `python stats.py lvf 2093`
+    - Output:
+        ```
+        data/2093_2022-11-23_guest_jonavos-sc.csv
+        data/2093_2022-11-23_home_svaja-viktorija-lsu.csv
+        ```
 
-```
-data/1623_22-10-28_home_fluminense.csv
-data/1623_22-10-28_guest_barueri-volleyball-club.csv
-```
-
-# Page Locales
+# Page Locales (WIP)
 
 - pt-BR
 - en-GB
 
-# Scraped data
+# Scraped data (WIP)
 
 - [x] Match ID
 - [x] Match date
