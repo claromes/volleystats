@@ -22,7 +22,7 @@ $ `python stats.py [Federation Acronym] [Match ID]`
     - Federation Acronym: CBV
     - Match ID: 1623
     - Command: $ `python stats.py cbv 1623`
-    - Output:
+    - Outputs:
         ```
         data/1623_22-10-28_home_fluminense.csv
         data/1623_22-10-28_guest_barueri-volleyball-club.csv
@@ -33,7 +33,7 @@ $ `python stats.py [Federation Acronym] [Match ID]`
     - Federation Acronym: LVF
     - Match ID: 202
     - Command: $ `python stats.py lvf 2093`
-    - Output:
+    - Outputs:
         ```
         data/2093_2022-11-23_guest_jonavos-sc.csv
         data/2093_2022-11-23_home_svaja-viktorija-lsu.csv
