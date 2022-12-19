@@ -1,4 +1,4 @@
-# Scrapy settings for superliga project
+# Scrapy settings for matchstatistics project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'superliga'
+BOT_NAME = 'matchstatistics'
 
-SPIDER_MODULES = ['superliga.spiders']
-NEWSPIDER_MODULE = 'superliga.spiders'
+SPIDER_MODULES = ['matchstatistics.spiders']
+NEWSPIDER_MODULE = 'matchstatistics.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'superliga (+http://www.yourdomain.com)'
+#USER_AGENT = 'matchstatistics (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'superliga.middlewares.SuperligaSpiderMiddleware': 543,
+#    'matchstatistics.middlewares.MatchStatisticsSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'superliga.middlewares.SuperligaDownloaderMiddleware': 543,
+#    'matchstatistics.middlewares.MatchStatisticsDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'superliga.pipelines.SuperligaPipeline': 300,
+#    'matchstatistics.pipelines.MatchStatisticsPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

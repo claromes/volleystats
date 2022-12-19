@@ -1,6 +1,6 @@
-# Superscraper
+# Matchscraper
 
-Brazilian Volleyball Super League (Women) web scraper
+Match Statistics by Data Project web scraper
 
 # Requirements
 
@@ -9,15 +9,15 @@ Brazilian Volleyball Super League (Women) web scraper
 
 # Installation
 
-$ `git clone git@github.com:openvb/superscraper.git`
+$ `git clone git@github.com:openvb/matchscraper.git`
 
 # Usage
 
-python superliga.py [Match ID]
+python stats.py [Federation Acronym] [Match ID]
 
 ## Example
 
-$ `python superliga.py 1623`
+$ `python stats.py cbv 1623`
 
 Output:
 
@@ -25,6 +25,11 @@ Output:
 data/1623_22-10-28_home_fluminense.csv
 data/1623_22-10-28_guest_barueri-volleyball-club.csv
 ```
+
+# Page Locales
+
+- pt-BR
+- en-GB
 
 # Scraped data
 
@@ -68,4 +73,4 @@ data/1623_22-10-28_guest_barueri-volleyball-club.csv
     - [ ] Totals
 
 # License
-[GNU General Public License v3.0](https://github.com/openvb/superscraper/blob/main/LICENSE.md)
+[GNU General Public License v3.0](https://github.com/openvb/matchscraper/blob/main/LICENSE.md)

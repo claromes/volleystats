@@ -1,12 +1,14 @@
 import scrapy
 import os
+import re
+
 from . import utils
 
-class SuperligaHomeSpider(scrapy.Spider):
-    name = 'home_superliga'
+class StatsHomeSpider(scrapy.Spider):
+    name = 'home_stats'
 
-    def __init__(self, match_id='', **kwargs):
-        self.start_urls = [f'https://cbv-web.dataproject.com/MatchStatistics.aspx?mID={match_id}&ID=18&CID=70&PID=34']
+    def __init__(self, fed_acronym='', match_id='', **kwargs):
+        self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/MatchStatistics.aspx?mID={match_id}']
         self.match_id = match_id
         match_date = ''
         home_team = ''
@@ -15,11 +17,18 @@ class SuperligaHomeSpider(scrapy.Spider):
 
     def parse(self, response):
         match_date_text = response.xpath("normalize-space(//span[@id='Content_Main_LB_DateTime']/text())").get()
-        match_date = utils.parse_ptbr_date(match_date_text)
 
-        print(match_date)
+        ptBR = response.xpath("//*[contains(@class, 'RCB_Culture_pt-BR')]/span/input/@value").get()
+        enGB = response.xpath("//*[contains(@class, 'RCB_Culture_en-GB')]/span/input/@value").get()
 
-        home_team = response.xpath("normalize-space(//span[@id='Content_Main_LBL_HomeTeam']/text())").get().replace(' ', '-').lower()
+        if ptBR == 'PT':
+            match_date = utils.parse_ptbr_date(match_date_text)
+        elif enGB == 'EN':
+            match_date = utils.parse_engb_date(match_date_text)
+
+        home_team_1 = response.xpath("normalize-space(//span[@id='Content_Main_LBL_HomeTeam']/text())").get().replace(' ', '-').lower()
+        home_team = re.sub('[^A-Za-z0-9]+', '-', home_team_1)
+
         home_players = response.xpath("//div[@id='Content_Main_ctl17_RP_MatchStats_RPL_MatchStats_0']/div[3]/div/div/table/tbody/tr")
 
         for player in home_players:
@@ -44,4 +53,4 @@ class SuperligaHomeSpider(scrapy.Spider):
         self.home_team = home_team
 
     def closed(spider, reason):
-        os.rename('data/home_superliga.csv', 'data/{}_{}_home_{}.csv'.format(spider.match_id, spider.match_date, spider.home_team))
+        os.rename('data/home_stats.csv', 'data/{}_{}_home_{}.csv'.format(spider.match_id, spider.match_date, spider.home_team))
