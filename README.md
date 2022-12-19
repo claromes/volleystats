@@ -15,7 +15,7 @@ $ `git clone git@github.com:openvb/matchscraper.git`
 
 $ `python stats.py [Federation Acronym] [Match ID]`
 
-## Example
+## Examples
 
 - Brazilian Volleyball Confederation
     - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=1623
@@ -31,7 +31,7 @@ $ `python stats.py [Federation Acronym] [Match ID]`
 - Lithuanian Volleyball Federation
     - Data Project website: https://lvf-web.dataproject.com/MatchStatistics.aspx?mID=2093
     - Federation Acronym: LVF
-    - Match ID: 202
+    - Match ID: 2093
     - Command: $ `python stats.py lvf 2093`
     - Outputs:
         ```
