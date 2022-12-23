@@ -1,6 +1,8 @@
 # Matchscraper
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/openvb/matchscraper?include_prereleases)
+![GitHub](https://img.shields.io/github/license/openvb/matchscraper)
 
-Matchscraper, a web scraper, provides a CSV format files of volleyball match statistics from the Data Project websites.
+Matchscraper, a web scraper, provides a CSV format files of volleyball match statistics from the Web Competition by Data Project website.
 
 # Requirements
 
@@ -11,9 +13,13 @@ Matchscraper, a web scraper, provides a CSV format files of volleyball match sta
 
 $ `git clone git@github.com:openvb/matchscraper.git`
 
+$ `cd matchscraper`
+
+$ `pip install -r requirements.txt`
+
 # Usage
 
-$ `python stats.py [Federation Acronym] [Match ID]`
+$ `python stats.py <Federation Acronym> <Match ID>`
 
 ## Examples
 
@@ -39,7 +45,7 @@ $ `python stats.py [Federation Acronym] [Match ID]`
         data/2093_2022-11-23_home_svaja-viktorija-lsu.csv
         ```
 
-# Page Locales (WIP)
+# Page Locales
 
 - pt-BR
 - en-GB
@@ -84,6 +90,3 @@ $ `python stats.py [Federation Acronym] [Match ID]`
 - Block
     - [ ] Block Points by player
     - [ ] Totals
-
-# License
-[GNU General Public License v3.0](https://github.com/openvb/matchscraper/blob/main/LICENSE.md)
