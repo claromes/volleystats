@@ -4,12 +4,12 @@
 
 Matchscraper, a web scraper, provides a CSV format files of volleyball match statistics from the Web Competition by Data Project website.
 
-# Requirements
+## Requirements
 
 - Python 3.8+
 - Scrapy 2.7.1
 
-# Installation
+## Installation
 
 $ `git clone git@github.com:openvb/matchscraper.git`
 
@@ -45,12 +45,12 @@ $ `python stats.py <Federation Acronym> <Match ID>`
         data/2093_2022-11-23_home_svaja-viktorija-lsu.csv
         ```
 
-# Page Locales
+## Page Locales
 
 - pt-BR
 - en-GB
 
-# Scraped data (WIP)
+#3 Scraped data (WIP)
 
 - [x] Match ID
 - [x] Match date
