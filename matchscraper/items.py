@@ -6,7 +6,7 @@
 import scrapy
 
 
-class MatchStatisticsItem(scrapy.Item):
+class MatchScraperItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass

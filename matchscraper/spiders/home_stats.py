@@ -8,7 +8,7 @@ class StatsHomeSpider(scrapy.Spider):
     name = 'home_stats'
 
     def __init__(self, fed_acronym='', match_id='', **kwargs):
-        self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/MatchStatistics.aspx?mID={match_id}']
+        self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/MatchScraper.aspx?mID={match_id}']
         self.match_id = match_id
         match_date = ''
         home_team = ''

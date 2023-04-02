@@ -8,6 +8,6 @@
 from itemadapter import ItemAdapter
 
 
-class MatchStatisticsPipeline:
+class MatchScraperPipeline:
     def process_item(self, item, spider):
         return item

@@ -19,15 +19,17 @@ $ `pip install -r requirements.txt`
 
 # Usage
 
-$ `python stats.py <Federation Acronym> <Match ID>`
+$ sudo chmod +x match.py
+
+$ `python match.py <Federation Acronym> <Match ID>`
 
 ## Examples
 
 - Brazilian Volleyball Confederation
-    - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=1623
+    - Data Project website: https://cbv-web.dataproject.com/MatchScraper.aspx?mID=1623
     - Federation Acronym: CBV
     - Match ID: 1623
-    - Command: $ `python stats.py cbv 1623`
+    - Command: $ `python match.py cbv 1623`
     - Outputs:
         ```
         data/1623_22-10-28_home_fluminense.csv
@@ -35,10 +37,10 @@ $ `python stats.py <Federation Acronym> <Match ID>`
         ```
 
 - Lithuanian Volleyball Federation
-    - Data Project website: https://lvf-web.dataproject.com/MatchStatistics.aspx?mID=2093
+    - Data Project website: https://lvf-web.dataproject.com/MatchScraper.aspx?mID=2093
     - Federation Acronym: LVF
     - Match ID: 2093
-    - Command: $ `python stats.py lvf 2093`
+    - Command: $ `python match.py lvf 2093`
     - Outputs:
         ```
         data/2093_2022-11-23_guest_jonavos-sc.csv
