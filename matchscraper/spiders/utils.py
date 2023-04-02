@@ -20,9 +20,7 @@ def parse_engb_date(str):
     locale.setlocale(locale.LC_ALL, 'en-GB.UTF-8')
 
     str_1 = str.replace(' ', '-')
-    print(str_1)
     str_2 = str_1.rsplit('---', 1)[0]
-    print(str_2)
 
     parsed_date = datetime.strptime(str_2, '%d-%B-%Y').date()
 

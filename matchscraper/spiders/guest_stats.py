@@ -8,7 +8,7 @@ class StatsGuestSpider(scrapy.Spider):
     name = 'guest_stats'
 
     def __init__(self, fed_acronym='', match_id='', **kwargs):
-        self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/MatchScraper.aspx?mID={match_id}']
+        self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/MatchStatistics.aspx?mID={match_id}']
         self.match_id = match_id
         match_date = ''
         guest_team = ''
