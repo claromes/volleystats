@@ -19,7 +19,7 @@ $ `pip install -r requirements.txt`
 
 # Usage
 
-$ sudo chmod +x match.py
+$ `sudo chmod +x match.py`
 
 $ `python match.py <Federation Acronym> <Match ID>`
 
@@ -52,7 +52,7 @@ $ `python match.py <Federation Acronym> <Match ID>`
 - pt-BR
 - en-GB
 
-#3 Scraped data (WIP)
+## Scraped data (WIP)
 
 - [x] Match ID
 - [x] Match date
