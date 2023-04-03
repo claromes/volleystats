@@ -4,7 +4,7 @@ import re
 
 from . import utils
 
-class StatsHomeSpider(scrapy.Spider):
+class HomeStatsSpider(scrapy.Spider):
     name = 'home_stats'
 
     def __init__(self, fed_acronym='', match_id='', **kwargs):
