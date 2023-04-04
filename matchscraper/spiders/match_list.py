@@ -16,7 +16,7 @@ class MatchListSpider(scrapy.Spider):
         super().__init__(**kwargs)
 
     def parse(self, response):
-        matches = response.xpath("//div[@id='printableArea']/div/div/div/div/div[position() > 1]/div[2]/div")
+        matches = response.xpath("//div[@id='printableArea']/div/div/div/div/div[position() >= 1]/div[2]/div")
 
         for match in matches:
             match_id_string = match.xpath("./div/div/div[5]/p/@onclick").get()
