@@ -47,7 +47,6 @@ $ `python match.py <Federation Acronym> <Match ID>`
         data/2093_2022-11-23_home_svaja-viktorija-lsu.csv
         ```
 <br>
-<br>
 
 >*Match List*
 
