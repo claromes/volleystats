@@ -1,6 +1,7 @@
 import scrapy
 import os
 import re
+import sys
 
 from . import utils
 
@@ -53,4 +54,14 @@ class GuestStatsSpider(scrapy.Spider):
         self.guest_team = guest_team
 
     def closed(spider, reason):
-        os.rename('data/guest_stats.csv', 'data/{}-{}-guest-{}.csv'.format(spider.match_id, spider.match_date, spider.guest_team))
+        src = 'data/guest_stats.csv'
+        dst = 'data/{}-{}-guest-{}.csv'.format(spider.match_id, spider.match_date, spider.guest_team)
+
+        try:
+            os.rename(src, dst)
+
+            print('--\n{} file was created!\n--'.format(dst))
+            sys.stdout.flush()
+        except(FileExistsError):
+            print('--\nFile {} already exists.\n{} was created or renamed!\n--'.format(dst, src))
+            sys.stdout.flush()

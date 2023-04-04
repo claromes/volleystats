@@ -38,7 +38,7 @@ class MatchListSpider(scrapy.Spider):
         try:
             os.rename(src, dst)
 
-            print('--\n{} file was created!\n--'.format(dst, src))
+            print('--\n{} file was created!\n--'.format(dst))
             sys.stdout.flush()
         except(FileExistsError):
             print('--\nFile {} already exists.\n{} was created or renamed!\n--'.format(dst, src))
