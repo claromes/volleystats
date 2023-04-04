@@ -26,17 +26,17 @@ class GuestStatsSpider(scrapy.Spider):
         elif enGB == 'EN':
             match_date = utils.parse_engb_date(match_date_text)
 
-        guest_team_1 = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-').lower()
-        guest_team = re.sub('[^A-Za-z0-9]+', '-', guest_team_1)
+        guest_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-').lower()
+        guest_team = re.sub('[^A-Za-z0-9]+', '-', guest_team_string)
 
         guest_players = response.xpath("//div[@id='Content_Main_ctl17_RP_MatchStats_RPL_MatchStats_0']/div[5]/div/div/table/tbody/tr")
 
         for player in guest_players:
-            player_number = player.xpath("./td[1]/p/span/text()").get()
-            player_name = player.xpath("./td[2]/p/span/b/text()").get()
-            points_tot = player.xpath("./td[8]/p/span/text()").get()
-            points_BP = player.xpath("./td[9]/p/span/text()").get()
-            points_WL = player.xpath("./td[10]/p/span/text()").get()
+            player_number = player.xpath('./td[1]/p/span/text()').get()
+            player_name = player.xpath('./td[2]/p/span/b/text()').get().lower()
+            points_tot = player.xpath('./td[8]/p/span/text()').get()
+            points_BP = player.xpath('./td[9]/p/span/text()').get()
+            points_WL = player.xpath('./td[10]/p/span/text()').get()
 
             yield {
                 'Match ID': self.match_id,
@@ -53,4 +53,4 @@ class GuestStatsSpider(scrapy.Spider):
         self.guest_team = guest_team
 
     def closed(spider, reason):
-        os.rename('data/guest_stats.csv', 'data/{}_{}_guest_{}.csv'.format(spider.match_id, spider.match_date, spider.guest_team))
+        os.rename('data/guest_stats.csv', 'data/{}-{}-guest-{}.csv'.format(spider.match_id, spider.match_date, spider.guest_team))
