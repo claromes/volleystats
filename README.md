@@ -1,8 +1,8 @@
 # Matchscraper
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/openvb/matchscraper?include_prereleases)
-![GitHub](https://img.shields.io/github/license/openvb/matchscraper)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/claromes/matchscraper?include_prereleases)
+![GitHub](https://img.shields.io/github/license/claromes/matchscraper)
 
-Matchscraper, a web scraper, provides a CSV format files of volleyball match statistics from the Web Competition by Data Project website.
+Matchscraper, a web scraper, provides a CSV format files of volleyball match statistics from the Web Competition by Data Project website
 
 ## Requirements
 
@@ -11,26 +11,26 @@ Matchscraper, a web scraper, provides a CSV format files of volleyball match sta
 
 ## Installation
 
-$ `git clone git@github.com:openvb/matchscraper.git`
+$ `git clone git@github.com:claromes/matchscraper.git`
 
 $ `cd matchscraper`
 
 $ `pip install -r requirements.txt`
 
-# Usage
+## Usage
 
-$ `sudo chmod +x match.py`
+>*Match*
 
 $ `python match.py <Federation Acronym> <Match ID>`
 
-## Examples
+### Examples
 
 - Brazilian Volleyball Confederation
     - Data Project website: https://cbv-web.dataproject.com/MatchScraper.aspx?mID=1623
     - Federation Acronym: CBV
     - Match ID: 1623
     - Command: $ `python match.py cbv 1623`
-    - Outputs:
+    - Output files:
         ```
         data/1623_22-10-28_home_fluminense.csv
         data/1623_22-10-28_guest_barueri-volleyball-club.csv
@@ -41,10 +41,28 @@ $ `python match.py <Federation Acronym> <Match ID>`
     - Federation Acronym: LVF
     - Match ID: 2093
     - Command: $ `python match.py lvf 2093`
-    - Outputs:
+    - Output files:
         ```
         data/2093_2022-11-23_guest_jonavos-sc.csv
         data/2093_2022-11-23_home_svaja-viktorija-lsu.csv
+        ```
+<br>
+<br>
+
+>*Match List*
+
+$ `python match_list.py <Federation Acronym> <Competition ID>`
+
+### Example
+
+- Brazilian Volleyball Confederation
+    - Data Project website: https://cbv-web.dataproject.com//CompetitionMatches.aspx?ID=18
+    - Federation Acronym: CBV
+    - Competition ID: 18
+    - Command: $ `python match_list.py cbv 18`
+    - Output files:
+        ```
+        data/18_match_list.csv
         ```
 
 ## Page Locales
@@ -54,14 +72,24 @@ $ `python match.py <Federation Acronym> <Match ID>`
 
 ## Scraped data (WIP)
 
-- [x] Match ID
-- [x] Match date
-- [x] Home Team
-- [x] Guest Team
-- [ ] Coach
-- [ ] Location
-- [ ] Final result
-- [ ] Result per SET
+- Competition
+    - [x] Competition ID
+    - [x] Home Team
+    - [x] Guest Team
+    - [ ] Home Points
+    - [ ] Guest Points
+    - [ ] Date
+    - [ ] Location
+
+- Match
+    - [x] Match ID
+    - [x] Match date
+    - [x] Home Team
+    - [x] Guest Team
+    - [ ] Coach
+    - [ ] Location
+    - [ ] Final result
+    - [ ] Result per SET
 
 - Vote
     - [ ] Vote by player

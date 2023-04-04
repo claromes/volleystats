@@ -1,6 +1,7 @@
 import scrapy
 import os
 import re
+import sys
 
 class MatchListSpider(scrapy.Spider):
     name = 'match_list'
@@ -15,21 +16,30 @@ class MatchListSpider(scrapy.Spider):
         super().__init__(**kwargs)
 
     def parse(self, response):
-        for j in range(0, 60, 2):
-            for i in range(0, 12, 2):
-                match = response.xpath("//div[@id='ctl00_Content_Main_70_userControl_RADLIST_Legs_ctrl{}_RADLIST_Matches_ctrl{}_MatchRow']/div/div".format(j, i))
+        matches = response.xpath("//div[@id='printableArea']/div/div/div/div/div[position() > 1]/div[2]/div")
 
-                match_id_string = match.xpath("./div[4]/p/@onclick").get()
-                match_id = re.search(r'mID=(\d+)', match_id_string).group(1)
+        for match in matches:
+            match_id_string = match.xpath("./div/div/div[5]/p/@onclick").get()
+            match_id = re.search(r'mID=(\d+)', match_id_string).group(1)
 
-                home_team = match.xpath("./div[5]/p/span/*/text() | ./div[5]/p/span/text()").get().lower()
-                guest_team = match.xpath("./div[9]/p/span/*/text() | ./div[9]/p/span/text()").get().lower()
+            home_team = match.xpath("./div/div/div[5]/p/span/*/text() | ./div/div/div[5]/p/span/text()").get().lower()
+            guest_team = match.xpath("./div/div/div[9]/p/span/*/text() | ./div/div/div[9]/p/span/text()").get().lower()
 
-                yield {
-                    'Match ID': match_id,
-                    'Home Team': home_team,
-                    'Guest Team': guest_team
-                }
+            yield {
+                'Match ID': match_id,
+                'Home Team': home_team,
+                'Guest Team': guest_team
+            }
 
     def closed(spider, reason):
-        os.rename('data/match_list.csv', 'data/{}_match_list.csv'.format(spider.competition_id))
+        src = 'data/match_list.csv'
+        dst = 'data/{}_match_list.csv'.format(spider.competition_id)
+
+        try:
+            os.rename(src, dst)
+
+            print('--\n{} file was created!\n--'.format(dst, src))
+            sys.stdout.flush()
+        except(FileExistsError):
+            print('--\nFile {} already exists.\n{} was created or renamed!\n--'.format(dst, src))
+            sys.stdout.flush()
