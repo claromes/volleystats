@@ -33,7 +33,7 @@ class HomeStatsSpider(scrapy.Spider):
 
         for player in home_players:
             player_number = player.xpath('./td[1]/p/span/text()').get()
-            player_name = player.xpath('./td[2]/p/span/b/text()').get()
+            player_name = player.xpath('./td[2]/p/span/b/text()').get().lower()
             points_tot = player.xpath('./td[8]/p/span/text()').get()
             points_BP = player.xpath('./td[9]/p/span/text()').get()
             points_WL = player.xpath('./td[10]/p/span/text()').get()
@@ -53,4 +53,4 @@ class HomeStatsSpider(scrapy.Spider):
         self.home_team = home_team
 
     def closed(spider, reason):
-        os.rename('data/home_stats.csv', 'data/{}_{}_home_{}.csv'.format(spider.match_id, spider.match_date, spider.home_team))
+        os.rename('data/home_stats.csv', 'data/{}-{}-home-{}.csv'.format(spider.match_id, spider.match_date, spider.home_team))

@@ -33,7 +33,7 @@ class GuestStatsSpider(scrapy.Spider):
 
         for player in guest_players:
             player_number = player.xpath('./td[1]/p/span/text()').get()
-            player_name = player.xpath('./td[2]/p/span/b/text()').get()
+            player_name = player.xpath('./td[2]/p/span/b/text()').get().lower()
             points_tot = player.xpath('./td[8]/p/span/text()').get()
             points_BP = player.xpath('./td[9]/p/span/text()').get()
             points_WL = player.xpath('./td[10]/p/span/text()').get()
@@ -53,4 +53,4 @@ class GuestStatsSpider(scrapy.Spider):
         self.guest_team = guest_team
 
     def closed(spider, reason):
-        os.rename('data/guest_stats.csv', 'data/{}_{}_guest_{}.csv'.format(spider.match_id, spider.match_date, spider.guest_team))
+        os.rename('data/guest_stats.csv', 'data/{}-{}-guest-{}.csv'.format(spider.match_id, spider.match_date, spider.guest_team))

@@ -22,8 +22,8 @@ class MatchListSpider(scrapy.Spider):
                 match_id_string = match.xpath("./div[4]/p/@onclick").get()
                 match_id = re.search(r'mID=(\d+)', match_id_string).group(1)
 
-                home_team = match.xpath("./div[5]/p/span/*/text() | ./div[5]/p/span/text()").get()
-                guest_team = match.xpath("./div[9]/p/span/*/text() | ./div[9]/p/span/text()").get()
+                home_team = match.xpath("./div[5]/p/span/*/text() | ./div[5]/p/span/text()").get().lower()
+                guest_team = match.xpath("./div[9]/p/span/*/text() | ./div[9]/p/span/text()").get().lower()
 
                 yield {
                     'Match ID': match_id,
@@ -32,4 +32,4 @@ class MatchListSpider(scrapy.Spider):
                 }
 
     def closed(spider, reason):
-        os.rename('data/match_list.csv', 'data/match_list_{}.csv'.format(spider.competition_id))
+        os.rename('data/match_list.csv', 'data/{}_match_list.csv'.format(spider.competition_id))
