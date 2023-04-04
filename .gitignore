@@ -1,3 +1,4 @@
 matchscraper/__pycache__
 matchscraper/spiders/__pycache__
-data/
+/data
+/venv
