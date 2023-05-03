@@ -2,7 +2,7 @@
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/claromes/matchscraper?include_prereleases)
 ![GitHub](https://img.shields.io/github/license/claromes/matchscraper)
 
-Matchscraper, a web scraper, provides a CSV format files of volleyball match statistics from the Web Competition by Data Project website
+Matchscraper, a web scraper, provides CSV format files of volleyball match statistics from the Web Competition by Data Project websites
 
 ## Requirements
 
