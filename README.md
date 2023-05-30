@@ -2,7 +2,7 @@
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/claromes/matchscraper?include_prereleases)
 ![GitHub](https://img.shields.io/github/license/claromes/matchscraper)
 
-Matchscraper, a web scraper, provides CSV format files of volleyball match statistics from the Web Competition by Data Project websites
+Web scraper to get volleyball match statistics from the *Web Competition by Data Project* websites in CSV format.
 
 ## Requirements
 
@@ -21,12 +21,14 @@ $ `pip install -r requirements.txt`
 
 >*Match*
 
+Stats of a match in separate files (home and guest).
+
 $ `python match.py <Federation Acronym> <Match ID>`
 
 ### Examples
 
 - Brazilian Volleyball Confederation
-    - Data Project website: https://cbv-web.dataproject.com/MatchScraper.aspx?mID=1623
+    - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=1623
     - Federation Acronym: CBV
     - Match ID: 1623
     - Command: $ `python match.py cbv 1623`
@@ -37,7 +39,7 @@ $ `python match.py <Federation Acronym> <Match ID>`
         ```
 
 - Lithuanian Volleyball Federation
-    - Data Project website: https://lvf-web.dataproject.com/MatchScraper.aspx?mID=2093
+    - Data Project website: https://lvf-web.dataproject.com/MatchStatistics.aspx?mID=2093
     - Federation Acronym: LVF
     - Match ID: 2093
     - Command: $ `python match.py lvf 2093`
@@ -48,9 +50,11 @@ $ `python match.py <Federation Acronym> <Match ID>`
         ```
 <br>
 
->*Match List*
+>*Competition Matches*
 
-$ `python match_list.py <Federation Acronym> <Competition ID>`
+List of matches in a competition.
+
+$ `python competition.py <Federation Acronym> <Competition ID>`
 
 ### Example
 
@@ -58,13 +62,13 @@ $ `python match_list.py <Federation Acronym> <Competition ID>`
     - Data Project website: https://cbv-web.dataproject.com//CompetitionMatches.aspx?ID=18
     - Federation Acronym: CBV
     - Competition ID: 18
-    - Command: $ `python match_list.py cbv 18`
+    - Command: $ `python competition.py cbv 18`
     - Output files:
         ```
-        data/18_match_list.csv
+        data/18_competition_matches.csv
         ```
 
-## Page Locales
+## Page Locales availables
 
 - pt-BR
 - en-GB
