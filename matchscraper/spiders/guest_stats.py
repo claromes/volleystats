@@ -3,7 +3,7 @@ import os
 import re
 import sys
 
-from . import utils
+from ..utils import *
 
 class GuestStatsSpider(scrapy.Spider):
     name = 'guest_stats'
@@ -23,9 +23,9 @@ class GuestStatsSpider(scrapy.Spider):
         enGB = response.xpath("//*[contains(@class, 'RCB_Culture_en-GB')]/span/input/@value").get()
 
         if ptBR == 'PT':
-            match_date = utils.parse_ptbr_date(match_date_text)
+            match_date = parse_ptbr_date(match_date_text)
         elif enGB == 'EN':
-            match_date = utils.parse_engb_date(match_date_text)
+            match_date = parse_engb_date(match_date_text)
 
         guest_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-').lower()
         guest_team = re.sub('[^A-Za-z0-9]+', '-', guest_team_string)
