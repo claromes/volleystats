@@ -4,6 +4,8 @@
 
 CLI tool to get volleyball match statistics from the *Web Competition by Data Project* websites in CSV format.
 
+**This tool is not affiliated with Data Project.**
+
 # Docs
 
 ## Requirements
@@ -135,3 +137,7 @@ $ `matchscraper --competition <Federation Acronym> <Competition ID>`
 - Block
     - [ ] Block Points by player
     - [ ] Totals
+
+## Author
+
+[claromes](https://claromes.gitlab.io/)

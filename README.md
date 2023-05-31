@@ -4,6 +4,18 @@
 
 CLI tool to get volleyball match statistics from the *Web Competition by Data Project* websites in CSV format.
 
+**This tool is not affiliated with Data Project.**
+
+## Requirements
+
+- Python 3.8+
+
+## Installation
+
+```shell
+pip3 install matchscraper
+```
+
 ## Usage
 ```shell
 $ matchscraper --match cbv 1623
@@ -40,12 +52,6 @@ data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created!
 ## [Documentation](https://claromes.github.io/matchscraper/)
 
 ## Development
-
-### Requirements
-
-- Python 3.8+
-
-### Installation
 
 $ `git clone git@github.com:claromes/matchscraper.git`
 
