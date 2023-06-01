@@ -43,7 +43,7 @@ setup(
     install_requires=install_requires,
     entry_points = {
 		'console_scripts': [
-			'matchscraper = matchscraper:__main__',
+			'matchscraper = matchscraper.main:main',
 		],
 	},
 )
