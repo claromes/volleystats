@@ -6,6 +6,8 @@ CLI tool to get volleyball match statistics from the *Web Competition by Data Pr
 
 **This tool is not affiliated with Data Project.**
 
+<br>
+
 # Docs
 
 ## Requirements
@@ -96,6 +98,8 @@ $ `matchscraper --help`
 - pt-BR
 - en-GB
 
+<br>
+
 ## Scraped data (WIP)
 
 - Competition
@@ -146,6 +150,8 @@ $ `matchscraper --help`
 - Block
     - [ ] Block Points by player
     - [ ] Totals
+
+<br>
 
 ## Author
 
