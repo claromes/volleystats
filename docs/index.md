@@ -21,11 +21,23 @@ pip3 install matchscraper
 ```
 
 ## Usage
-```shell
+```
 matchscraper --fed cbv --match 1623
 ```
 
-```shell
+```
+                    .
+                    |`.
+                    |  `.
+                    |-_  `.
+                    |  -_  `._
+____________________|____-_ _|_______________,
+',                         -_|                ',
+  ',                         |                  ',
+    ',                       |                    ',
+      ',_____________________|______________________',
+	    Matchscraper
+
 Matchscraper: started!
 
 Matchscraper: data/1623_22-10-28_home_fluminense.csv file was created!
