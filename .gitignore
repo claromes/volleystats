@@ -8,7 +8,6 @@ sample.txt
 /dist/
 /build/
 /*.egg-info/
-MANIFEST.in
 
 # env
 /venv

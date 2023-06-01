@@ -27,6 +27,7 @@ setup(
     packages=find_packages(exclude=['docs']),
     classifiers=[
         'Development Status :: 4 - Beta',
+        'Environment :: Console',
         'Framework :: Scrapy',
         'Intended Audience :: Science/Research',
         'Intended Audience :: Developers',
@@ -42,7 +43,7 @@ setup(
     install_requires=install_requires,
     entry_points = {
 		'console_scripts': [
-			'matchscraper = matchscraper.main',
+			'matchscraper = matchscraper:__main__',
 		],
 	},
 )
