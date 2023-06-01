@@ -1,6 +1,6 @@
 # Matchscraper
 
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/claromes/matchscraper?include_prereleases)](https://github.com/claromes/matchscraper/releases) [![License)](https://img.shields.io/github/license/claromes/matchscraper)](https://github.com/claromes/matchscraper/blob/main/LICENSE.md)
+[![PyPI](https://img.shields.io/pypi/v/matchscraper)](https://pypi.org/project/matchscraper/) [![License)](https://img.shields.io/github/license/claromes/matchscraper)](https://github.com/claromes/matchscraper/blob/main/LICENSE.md)
 
 CLI tool to get volleyball match statistics from the *Web Competition by Data Project* websites in CSV format.
 
@@ -20,16 +20,17 @@ pip3 install matchscraper
 
 ## Usage
 ```shell
-$ matchscraper --match cbv 1623
+matchscraper --match cbv 1623
 ```
 
-```
---
-data/1623_22-10-28_home_fluminense.csv file was created!
---
---
-data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created!
---
+```shell
+Matchscraper: started!
+
+Matchscraper: data/1623_22-10-28_home_fluminense.csv file was created!
+
+Matchscraper: data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created!
+
+Matchscraper: finished!
 ```
 
 ## CLI
