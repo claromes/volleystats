@@ -18,27 +18,27 @@ def parse_ptbr_date(str):
 
     if date_re_2 == 'janeiro':
         date_re_en = 'january'
-    if date_re_2 == 'fevereiro':
+    elif date_re_2 == 'fevereiro':
         date_re_en = 'february'
-    if date_re_2 == 'março':
+    elif date_re_2 == 'março':
         date_re_en = 'march'
-    if date_re_2 == 'abril':
+    elif date_re_2 == 'abril':
         date_re_en = 'april'
-    if date_re_2 == 'maio':
+    elif date_re_2 == 'maio':
         date_re_en = 'may'
-    if date_re_2 == 'junho':
+    elif date_re_2 == 'junho':
         date_re_en = 'june'
-    if date_re_2 == 'julho':
+    elif date_re_2 == 'julho':
         date_re_en = 'july'
-    if date_re_2 == 'agosto':
+    elif date_re_2 == 'agosto':
         date_re_en = 'august'
-    if date_re_2 == 'setembro':
+    elif date_re_2 == 'setembro':
         date_re_en = 'september'
-    if date_re_2 == 'outubro':
+    elif date_re_2 == 'outubro':
         date_re_en = 'october'
-    if date_re_2 == 'novembro':
+    elif date_re_2 == 'novembro':
         date_re_en = 'november'
-    if date_re_2 == 'dezembro':
+    elif date_re_2 == 'dezembro':
         date_re_en = 'december'
 
     var_date_re_2 = r'{}-'.format(re.escape(date_re_2))
@@ -52,6 +52,6 @@ def parse_engb_date(str):
     str_1 = str.replace(' ', '-')
     str_2 = str_1.rsplit('---', 1)[0]
 
-    parse_engb_date = datetime.strptime(str_2, '%d-%B-%Y').date()
+    parsed_engb_date = datetime.strptime(str_2, '%d-%B-%Y').date()
 
     return parsed_engb_date

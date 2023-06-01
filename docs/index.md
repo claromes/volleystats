@@ -37,7 +37,7 @@ data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created!
 
 Stats of a match in separate files (home and guest).
 
-$ `matchscraper --match <Federation Acronym> <Match ID>`
+$ `matchscraper --fed <Federation Acronym> --match <Match ID>`
 
 ### Examples
 
@@ -45,7 +45,7 @@ $ `matchscraper --match <Federation Acronym> <Match ID>`
     - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=1623
     - Federation Acronym: CBV
     - Match ID: 1623
-    - Command: $ `matchscraper --match cbv 1623`
+    - Command: $ `matchscraper --fed cbv --match 1623`
     - Output files:
         ```
         data/1623_22-10-28_home_fluminense.csv
@@ -56,7 +56,7 @@ $ `matchscraper --match <Federation Acronym> <Match ID>`
     - Data Project website: https://lvf-web.dataproject.com/MatchStatistics.aspx?mID=2093
     - Federation Acronym: LVF
     - Match ID: 2093
-    - Command: $ `matchscraper --match lvf 2093`
+    - Command: $ `matchscraper --fed lvf --match 2093`
     - Output files:
         ```
         data/2093_2022-11-23_guest_jonavos-sc.csv
@@ -68,7 +68,7 @@ $ `matchscraper --match <Federation Acronym> <Match ID>`
 
 List of matches in a competition.
 
-$ `matchscraper --competition <Federation Acronym> <Competition ID>`
+$ `matchscraper --fed <Federation Acronym> --comp <Competition ID>`
 
 ### Example
 
@@ -76,11 +76,19 @@ $ `matchscraper --competition <Federation Acronym> <Competition ID>`
     - Data Project website: https://cbv-web.dataproject.com//CompetitionMatches.aspx?ID=18
     - Federation Acronym: CBV
     - Competition ID: 18
-    - Command: $ `matchscraper --competition cbv 18`
+    - Command: $ `matchscraper --fed 18 --comp cbv`
     - Output files:
         ```
         data/18_competition_matches.csv
         ```
+
+>*Help*
+
+Show help message.
+
+$ `matchscraper --help`
+
+<br>
 
 ## Available Page Locales
 
