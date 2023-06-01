@@ -44,12 +44,21 @@ if args['match']:
 	fed_acronym = args['fed']
 	match_id = args['match']
 
-	process.crawl(HomeStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
+    # https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+	print('\x1b[6;30;42m' + '\nMatchscraper: started!' + '\x1b[0m\n')
+
 	process.crawl(GuestStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
+	process.crawl(HomeStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
 	process.start()
+
+	print('\x1b[6;30;42m' + '\nMatchscraper: finished!' + '\x1b[0m\n')
 elif args['comp']:
     fed_acronym = args['fed']
     competition_id = args['comp']
 
+    print('\x1b[6;30;42m' + '\nMatchscraper: started!' + '\x1b[0m\n')
+
     process.crawl(CompetitionMatchesSpider, fed_acronym=fed_acronym, competition_id=competition_id)
     process.start()
+
+    print('\x1b[6;30;42m' + '\nMatchscraper: finished!' + '\x1b[0m\n')
