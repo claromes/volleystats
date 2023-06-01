@@ -84,6 +84,7 @@ $ `matchscraper --fed <Federation Acronym> --comp <Competition ID>`
         ```
         data/18_competition_matches.csv
         ```
+<br>
 
 >*Help*
 
@@ -91,14 +92,10 @@ Show help message.
 
 $ `matchscraper --help`
 
-<br>
-
 ## Available Page Locales
 
 - pt-BR
 - en-GB
-
-<br>
 
 ## Scraped data (WIP)
 
@@ -150,8 +147,6 @@ $ `matchscraper --help`
 - Block
     - [ ] Block Points by player
     - [ ] Totals
-
-<br>
 
 ## Author
 
