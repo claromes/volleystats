@@ -3,8 +3,8 @@ import os
 import re
 import sys
 
-class MatchListSpider(scrapy.Spider):
-    name = 'match_list'
+class CompetitionMatchesSpider(scrapy.Spider):
+    name = 'competition_matches'
 
     def __init__(self, fed_acronym='', competition_id='', **kwargs):
         self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/CompetitionMatches.aspx?ID={competition_id}']
@@ -32,14 +32,12 @@ class MatchListSpider(scrapy.Spider):
             }
 
     def closed(spider, reason):
-        src = 'data/match_list.csv'
-        dst = 'data/{}_match_list.csv'.format(spider.competition_id)
+        src = 'data/competition_matches.csv'
+        dst = 'data/{}_competition_matches.csv'.format(spider.competition_id)
 
         try:
             os.rename(src, dst)
 
-            print('--\n{} file was created!\n--'.format(dst))
-            sys.stdout.flush()
+            print('\x1b[6;30;42m' + '\nMatchscraper: {} file was created!'.format(dst) + '\x1b[0m\n')
         except(FileExistsError):
-            print('--\nFile {} already exists.\n{} was created or renamed!\n--'.format(dst, src))
-            sys.stdout.flush()
+            print('\x1b[6;30;43m' + '\nMatchscraper: file {} already exists.\n{} was created or renamed!'.format(dst, src) + '\x1b[0m\n')

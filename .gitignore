@@ -1,4 +1,14 @@
+# dev
 matchscraper/__pycache__
 matchscraper/spiders/__pycache__
 /data
+sample.txt
+
+# build
+/dist/
+/build/
+/*.egg-info/
+MANIFEST.in
+
+# env
 /venv
