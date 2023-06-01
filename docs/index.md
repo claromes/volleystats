@@ -22,7 +22,7 @@ pip3 install matchscraper
 
 ## Usage
 ```shell
-matchscraper --match cbv 1623
+matchscraper --fed cbv --match 1623
 ```
 
 ```shell
