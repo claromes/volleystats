@@ -1,6 +1,6 @@
 # Matchscraper
 
-[![PyPI](https://img.shields.io/pypi/v/matchscraper)](https://pypi.org/project/matchscraper/) [![License)](https://img.shields.io/github/license/claromes/matchscraper)](https://github.com/claromes/matchscraper/blob/main/LICENSE.md)
+[![PyPI](https://img.shields.io/pypi/v/matchscraper)](https://pypi.org/project/matchscraper/) [![License)](https://img.shields.io/github/license/claromes/matchscraper)](https://github.com/claromes/matchscraper/blob/main/LICENSE.md) [![Star](https://img.shields.io/github/stars/claromes/matchscraper?style=social)](https://github.com/claromes/matchscraper)
 
 CLI tool to get volleyball match statistics from the *Web Competition by Data Project* websites in CSV format.
 
