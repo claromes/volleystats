@@ -1,6 +1,6 @@
-# Matchscraper
+# volleystats
 
-[![PyPI](https://img.shields.io/pypi/v/matchscraper)](https://pypi.org/project/matchscraper/) [![License)](https://img.shields.io/github/license/claromes/matchscraper)](https://github.com/claromes/matchscraper/blob/main/LICENSE.md) [![Star](https://img.shields.io/github/stars/claromes/matchscraper?style=social)](https://github.com/claromes/matchscraper)
+[![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/) [![License)](https://img.shields.io/github/license/claromes/volleystats)](https://github.com/claromes/volleystats/blob/main/LICENSE.md) [![Star](https://img.shields.io/github/stars/claromes/volleystats?style=social)](https://github.com/claromes/volleystats)
 
 CLI tool to get volleyball match statistics from the *Web Competition by Data Project* websites in CSV format.
 
@@ -17,12 +17,12 @@ CLI tool to get volleyball match statistics from the *Web Competition by Data Pr
 ## Installation
 
 ```shell
-pip3 install matchscraper
+pip3 install volleystats
 ```
 
 ## Usage
 ```
-matchscraper --fed cbv --match 1623
+volleystats --fed cbv --match 1623
 ```
 
 ```
@@ -36,15 +36,15 @@ ____________________|____-_ _|_______________,
   ',                         |                  ',
     ',                       |                    ',
       ',_____________________|______________________',
-	    Matchscraper
+	    volleystats
 
-Matchscraper: started!
+volleystats: started!
 
-Matchscraper: data/1623_22-10-28_home_fluminense.csv file was created!
+volleystats: data/1623_22-10-28_home_fluminense.csv file was created!
 
-Matchscraper: data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created!
+volleystats: data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created!
 
-Matchscraper: finished!
+volleystats: finished!
 ```
 
 ## CLI
@@ -52,7 +52,7 @@ Matchscraper: finished!
 
 Stats of a match in separate files (home and guest).
 
-$ `matchscraper --fed <Federation Acronym> --match <Match ID>`
+$ `volleystats --fed <Federation Acronym> --match <Match ID>`
 
 ### Examples
 
@@ -60,7 +60,7 @@ $ `matchscraper --fed <Federation Acronym> --match <Match ID>`
     - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=1623
     - Federation Acronym: CBV
     - Match ID: 1623
-    - Command: $ `matchscraper --fed cbv --match 1623`
+    - Command: $ `volleystats --fed cbv --match 1623`
     - Output files:
         ```
         data/1623_22-10-28_home_fluminense.csv
@@ -71,7 +71,7 @@ $ `matchscraper --fed <Federation Acronym> --match <Match ID>`
     - Data Project website: https://lvf-web.dataproject.com/MatchStatistics.aspx?mID=2093
     - Federation Acronym: LVF
     - Match ID: 2093
-    - Command: $ `matchscraper --fed lvf --match 2093`
+    - Command: $ `volleystats --fed lvf --match 2093`
     - Output files:
         ```
         data/2093_2022-11-23_guest_jonavos-sc.csv
@@ -83,7 +83,7 @@ $ `matchscraper --fed <Federation Acronym> --match <Match ID>`
 
 List of matches in a competition.
 
-$ `matchscraper --fed <Federation Acronym> --comp <Competition ID>`
+$ `volleystats --fed <Federation Acronym> --comp <Competition ID>`
 
 ### Example
 
@@ -91,7 +91,7 @@ $ `matchscraper --fed <Federation Acronym> --comp <Competition ID>`
     - Data Project website: https://cbv-web.dataproject.com//CompetitionMatches.aspx?ID=18
     - Federation Acronym: CBV
     - Competition ID: 18
-    - Command: $ `matchscraper --fed 18 --comp cbv`
+    - Command: $ `volleystats --fed 18 --comp cbv`
     - Output files:
         ```
         data/18_competition_matches.csv
@@ -102,7 +102,7 @@ $ `matchscraper --fed <Federation Acronym> --comp <Competition ID>`
 
 Show help message.
 
-$ `matchscraper --help`
+$ `volleystats --help`
 
 ## Available Page Locales
 

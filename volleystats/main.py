@@ -3,9 +3,9 @@ import os
 import sys
 from scrapy.crawler import CrawlerProcess
 
-from matchscraper.spiders.match import HomeStatsSpider, GuestStatsSpider
-from matchscraper.spiders.competition import CompetitionMatchesSpider
-from matchscraper.version import __version__
+from volleystats.spiders.match import HomeStatsSpider, GuestStatsSpider
+from volleystats.spiders.competition import CompetitionMatchesSpider
+from volleystats.version import __version__
 
 version = __version__
 welcome_msg = '''
@@ -19,12 +19,12 @@ ____________________|____-_ _|_______________,
   ',                         |                  ',
     ',                       |                    ',
       ',_____________________|______________________',
-	Matchscraper v{}
+	volleystats v{}
 '''.format(version)
 
 # https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
-started_msg = '\x1b[6;30;42m' + '\n Matchscraper: started! ' + '\x1b[0m\n'
-finished_msg = '\x1b[6;30;42m' + '\n Matchscraper: finished! ' + '\x1b[0m\n'
+started_msg = '\x1b[6;30;42m' + '\n volleystats: started! ' + '\x1b[0m\n'
+finished_msg = '\x1b[6;30;42m' + '\n volleystats: finished! ' + '\x1b[0m\n'
 
 def main():
 	print(welcome_msg)

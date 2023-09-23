@@ -7,22 +7,22 @@ with open('README.md', 'r', encoding='utf-8') as f:
 with open('requirements.txt', 'r', encoding='utf-8') as f:
     install_requires = f.read().splitlines()
 
-with open('matchscraper/version.py', 'r', encoding='utf-8') as f:
+with open('volleystats/version.py', 'r', encoding='utf-8') as f:
     version = re.search(r"^__version__\s*=\s*'(.*)'.*$",
         f.read(), flags=re.MULTILINE).group(1)
 
 setup(
-    name='matchscraper',
+    name='volleystats',
     version=version,
     author='claromes',
-    description='CLI tool to get volleyball match statistics from the Web Competition by Data Project websites',
+    description='CLI tool to get volleyball statistics from the Data Project Web Competition websites (WCM)',
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords='volleyball sports cli dataset analytics',
-    url='https://github.com/claromes/matchscraper',
+    url='https://github.com/claromes/volleystats',
     project_urls={
-        'Documentation': 'https://claromes.github.io/matchscraper/',
-        'Issue Tracker': 'https://github.com/claromes/matchscraper/issues',
+        'Documentation': 'https://claromes.github.io/volleystats/',
+        'Issue Tracker': 'https://github.com/claromes/volleystats/issues',
     },
     packages=find_packages(exclude=['docs']),
     classifiers=[
@@ -43,7 +43,7 @@ setup(
     install_requires=install_requires,
     entry_points = {
 		'console_scripts': [
-			'matchscraper = matchscraper.main:main',
+			'volleystats = volleystats.main:main',
 		],
 	},
 )

@@ -1,6 +1,6 @@
 # dev
-matchscraper/__pycache__
-matchscraper/spiders/__pycache__
+volleystats/__pycache__
+volleystats/spiders/__pycache__
 /data
 sample.txt
 

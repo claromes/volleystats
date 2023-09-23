@@ -1,8 +1,8 @@
-# Matchscraper
+# volleystats
 
-[![PyPI](https://img.shields.io/pypi/v/matchscraper)](https://pypi.org/project/matchscraper/)
+[![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/)
 
-CLI tool to get volleyball match statistics from the *Web Competition by Data Project* websites in CSV format.
+`volleystats` is a CLI tool to get volleyball statistics from the Data Project Web Competition websites (WCM)
 
 **This tool is not affiliated with Data Project.**
 
@@ -13,12 +13,12 @@ CLI tool to get volleyball match statistics from the *Web Competition by Data Pr
 ## Installation
 
 ```shell
-pip3 install matchscraper
+pip3 install volleystats
 ```
 
 ## Usage
 ```
-matchscraper --fed cbv --match 1623
+volleystats --fed cbv --match 1623
 ```
 
 ```
@@ -32,18 +32,18 @@ ____________________|____-_ _|_______________,
   ',                         |                  ',
     ',                       |                    ',
       ',_____________________|______________________',
-	    Matchscraper
+	    volleystats
 
-Matchscraper: started!
+volleystats: started!
 
-Matchscraper: data/1623_22-10-28_home_fluminense.csv file was created!
+volleystats: data/1623_22-10-28_home_fluminense.csv file was created!
 
-Matchscraper: data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created!
+volleystats: data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created!
 
-Matchscraper: finished!
+volleystats: finished!
 ```
 
-## Scraped data (WIP)
+## Available Data (WIP)
 
 - Competition
     - Competition ID
@@ -62,12 +62,12 @@ Matchscraper: finished!
     - Win-Lost by player
     - Totals
 
-## [Documentation](https://claromes.github.io/matchscraper/)
+## [Documentation](https://openvb.github.io/volleystats)
 
 ## Development
 
-$ `git clone git@github.com:claromes/matchscraper.git`
+$ `git clone git@github.com:claromes/volleystats.git`
 
-$ `cd matchscraper`
+$ `cd volleystats`
 
 $ `pip install -r requirements.txt`

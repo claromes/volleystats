@@ -60,9 +60,9 @@ class HomeStatsSpider(scrapy.Spider):
         try:
             os.rename(src, dst)
 
-            print('\x1b[6;30;42m' + '\n Matchscraper: {} file was created! '.format(dst) + '\x1b[0m\n')
+            print('\x1b[6;30;42m' + '\n volleystats: {} file was created! '.format(dst) + '\x1b[0m\n')
         except(FileExistsError):
-            print('\x1b[6;30;43m' + '\n Matchscraper: file {} already exists.\n{} was created or renamed! '.format(dst, src) + '\x1b[0m\n')
+            print('\x1b[6;30;43m' + '\n volleystats: file {} already exists.\n{} was created or renamed! '.format(dst, src) + '\x1b[0m\n')
 
 class GuestStatsSpider(scrapy.Spider):
     name = 'guest_stats'
@@ -119,6 +119,6 @@ class GuestStatsSpider(scrapy.Spider):
         try:
             os.rename(src, dst)
 
-            print('\x1b[6;30;42m' + '\n Matchscraper: {} file was created! '.format(dst) + '\x1b[0m\n')
+            print('\x1b[6;30;42m' + '\n volleystats: {} file was created! '.format(dst) + '\x1b[0m\n')
         except(FileExistsError):
-            print('\x1b[6;30;43m' + '\n Matchscraper: file {} already exists.\n{} was created or renamed! '.format(dst, src) + '\x1b[0m\n')
+            print('\x1b[6;30;43m' + '\n volleystats: file {} already exists.\n{} was created or renamed! '.format(dst, src) + '\x1b[0m\n')
