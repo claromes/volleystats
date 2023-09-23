@@ -4,7 +4,7 @@
 
 `volleystats` is a CLI tool to get volleyball statistics from the Data Project Web Competition websites (WCM)
 
-**This tool is not affiliated with Data Project.**
+**This tool is not affiliated with Data Project**
 
 ## Requirements
 

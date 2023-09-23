@@ -2,9 +2,9 @@
 
 [![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/) [![License)](https://img.shields.io/github/license/claromes/volleystats)](https://github.com/claromes/volleystats/blob/main/LICENSE.md) [![Star](https://img.shields.io/github/stars/claromes/volleystats?style=social)](https://github.com/claromes/volleystats)
 
-CLI tool to get volleyball match statistics from the *Web Competition by Data Project* websites in CSV format.
+`volleystats` is a CLI tool to get volleyball statistics from the Data Project Web Competition websites (WCM)
 
-**This tool is not affiliated with Data Project.**
+**This tool is not affiliated with Data Project**
 
 <br>
 
@@ -109,7 +109,7 @@ $ `volleystats --help`
 - pt-BR
 - en-GB
 
-## Scraped data (WIP)
+## Available Data (WIP)
 
 - Competition
     - [x] Competition ID
@@ -162,4 +162,4 @@ $ `volleystats --help`
 
 ## Author
 
-[claromes](https://claromes.gitlab.io/)
+[Clarissa R Mendes (claromes)](https://claromes.gitlab.io)
