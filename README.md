@@ -18,96 +18,16 @@ pip3 install volleystats
 ```
 
 ## Usage
-```
-volleystats --fed cbv --match 1623
-```
 
 ```
-                    .
-                    |`.
-                    |  `.
-                    |-_  `.
-                    |  -_  `._
-____________________|____-_ _|_______________,
-',                         -_|                ',
-  ',                         |                  ',
-    ',                       |                    ',
-      ',_____________________|______________________',
-
-volleystats: started
-
-volleystats: data/1623_22-10-28_home_fluminense.csv file was created
-
-volleystats: data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created
-
-volleystats: finished
+volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 ```
 
-## CLI
-
-### Match
-
->Stats of a match in separate files (home and guest).
-
-$ `volleystats --fed <Federation Acronym> --match <Match ID>`
-
-**Examples**
-
-- Brazilian Volleyball Confederation
-    - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=1623
-    - Federation Acronym: CBV
-    - Match ID: 1623
-    - Command: $ `volleystats --fed cbv --match 1623`
-    - Output files:
-        ```
-        data/1623_22-10-28_home_fluminense.csv
-        data/1623_22-10-28_guest_barueri-volleyball-club.csv
-        ```
-
-- Lithuanian Volleyball Federation
-    - Data Project website: https://lvf-web.dataproject.com/MatchStatistics.aspx?mID=2093
-    - Federation Acronym: LVF
-    - Match ID: 2093
-    - Command: $ `volleystats --fed lvf --match 2093`
-    - Output files:
-        ```
-        data/2093_2022-11-23_guest_jonavos-sc.csv
-        data/2093_2022-11-23_home_svaja-viktorija-lsu.csv
-        ```
-<br>
-
-### Competition Matches
-
->List of matches in a competition.
-
-$ `volleystats --fed <Federation Acronym> --comp <Competition ID>`
-
-**Examples**
-
-- Brazilian Volleyball Confederation
-    - Data Project website: https://cbv-web.dataproject.com//CompetitionMatches.aspx?ID=18
-    - Federation Acronym: CBV
-    - Competition ID: 18
-    - Command: $ `volleystats --fed cbv --comp 18`
-    - Output files:
-        ```
-        data/18_competition_matches.csv
-        ```
-<br>
-
-### Help
-
->Show help message.
-
-$ `volleystats --help`
-
-<br>
-
-### Log
-
->Set logging.
-
-$ `volleystats (--fed FED --match MATCH | --comp COMP) --log`
+- `--fed`, `-f`: Federation Acronym (required)
+- `--match`, `-m`: Statistics of a single match (required, unless `--comp` is provided)
+- `--comp`, `-c`: List of matches in a competition (required, unless `--match` is provided)
+- `--log`, `-l`: View the logging during scraping
+- `--help`, `-h`: Show help
 
 ## Federations and Leagues Acronym
 
@@ -149,7 +69,7 @@ $ `volleystats (--fed FED --match MATCH | --comp COMP) --log`
 - `fcv`: Cordoba Volleyball Federation
 - `fpdv`: Peruvian Volleyball Federation
 
-## Main WCM endpoints
+## Data Project Web Competition endpoints
 
 - Base URL: `<Fed_Acronym>`-web.dataproject.com
 
@@ -169,61 +89,11 @@ $ `volleystats (--fed FED --match MATCH | --comp COMP) --log`
 - pt-BR
 - en-GB
 
-## Available Data (WIP)
+## Docs
 
-- Competition
-    - [x] Competition ID
-    - [x] Home Team
-    - [x] Guest Team
-    - [ ] Home Points
-    - [ ] Guest Points
-    - [ ] Date
-    - [ ] Location
-
-- Match
-    - [x] Match ID
-    - [x] Match date
-    - [x] Home Team
-    - [x] Guest Team
-    - [ ] Coach
-    - [ ] Location
-    - [ ] Final result
-    - [ ] Result per SET
-
-- Vote
-    - [ ] Vote by player
-
-- Points
-    - [x] Total Points by player
-    - [ ] Total Points by player per SET
-    - [x] Break Points by player
-    - [x] Win-Lost by player
-    - [x] Totals
-
-- Serve
-    - [ ] Total Serves by player
-    - [ ] Serve Erros by player
-    - [ ] Serve Points by player
-    - [ ] Totals
-
-- Reception
-    - [ ] Total Receptions by player
-    - [ ] Reception Erros by player
-    - [ ] Positive Pass Percentage by player
-    - [ ] Excellent/ Perfect Pass Percentage by player
-    - [ ] Totals
-
-- Attack
-    - [ ] Total Attacks by player
-    - [ ] Attack Erros by player
-    - [ ] Blocked Attack by player
-    - [ ] Attack Points by player
-    - [ ] Attack Points Percentage by player
-    - [ ] Totals
-
-- Block
-    - [ ] Block Points by player
-    - [ ] Totals
+- [Command examples](https://github.com/claromes/volleystats/blob/main/docs/EXAMPLES.md)
+- [Roadmap](https://github.com/claromes/volleystats/blob/main/docs/ROADMAP.md)
+- [Changelog](https://github.com/claromes/volleystats/blob/main/docs/CHANGELOG.md)
 
 ## Development
 
@@ -237,8 +107,8 @@ $ `pip install --editable .`
 
 ## License
 
-The package is licensed under the terms of the [GNU General Public License v3.0](LICENSE.md)
+The package is licensed under the terms of the [GNU General Public License v3.0](https://github.com/claromes/volleystats/blob/main/LICENSE.md)
 
 ## Author
 
-[Claromes](https://claromes.gitlab.io)
+Claromes ([GitHub](https://github.com/claromes))

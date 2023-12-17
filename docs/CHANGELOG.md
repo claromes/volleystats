@@ -5,6 +5,8 @@
 - Add log argument
 - Simplify basic log messages
 - Update Scrapy version to 2.11.0
+- Add `f-string`
+- Add docs with command examples, roadmap and changelog
 
 ### [0.3](https://github.com/claromes/volleystats/releases/tag/0.3) - Sep 23 2023
 
