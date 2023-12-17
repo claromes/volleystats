@@ -19,12 +19,11 @@ ____________________|____-_ _|_______________,
   ',                         |                  ',
     ',                       |                    ',
       ',_____________________|______________________',
-	volleystats v{}
 '''.format(version)
 
 # https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
-started_msg = '\x1b[6;30;42m' + '\n volleystats: started! ' + '\x1b[0m\n'
-finished_msg = '\x1b[6;30;42m' + '\n volleystats: finished! ' + '\x1b[0m\n'
+started_msg = '\x1b[6;30;42m' + '\n volleystats: started ' + '\x1b[0m\n'
+finished_msg = '\x1b[6;30;42m' + '\n volleystats: finished ' + '\x1b[0m\n'
 
 def main():
 	print(welcome_msg)
