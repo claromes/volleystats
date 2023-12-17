@@ -4,10 +4,10 @@
     - [x] Competition ID
     - [x] Home Team
     - [x] Guest Team
-    - [ ] Home Points
-    - [ ] Guest Points
-    - [ ] Date
-    - [ ] Location
+    - [x] Home Points
+    - [x] Guest Points
+    - [x] Date
+    - [x] Location
 
 - Match
     - [x] Match ID

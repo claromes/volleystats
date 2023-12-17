@@ -4,8 +4,7 @@
 
 CLI tool to get volleyball statistics from the Data Project Web Competition websites (WCM)
 
-> [!IMPORTANT]
-> This tool is not affiliated with Genius Sports Company
+**This tool is not affiliated with Genius Sports Company**
 
 ## Requirements
 
@@ -14,7 +13,7 @@ CLI tool to get volleyball statistics from the Data Project Web Competition webs
 ## Installation
 
 ```shell
-pip3 install volleystats
+pip install volleystats
 ```
 
 ## Usage
@@ -76,13 +75,13 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 - Endpoins:
     - /MainHome
 
-    - /History?ID=`<ID_Fed>`
+    - /History?ID=`<Fed_ID>`
 
     - /CompetitionHome?ID=`<Category_ID>` (*could be female and male, pro or young*)
 
     - /CompetitionMatches?ID=`<Competition_ID>`
 
-    - /MatchStatistics?mID=`Match_ID>`&`ID=Competition_ID>`
+    - /MatchStatistics?mID=`<Match_ID>`&ID=`<Competition_ID>`
 
 ## Available Page Locales
 

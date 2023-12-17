@@ -1,12 +1,18 @@
-# pt_BR: 'sábado, 5 de novembro de 2022 - 21:30' to 2022-11-05
-# en-GB: '05 November 2022 - 21:30' to 2022-11-05
-
 import locale
 import re
+
 from datetime import datetime
 
-def parse_ptbr_date(str):
-    str_1 = str.replace(' de ', '-')
+# '28/10/2022 - 19:30' to 2022-10-28
+def parse_short_date(short_date_string):
+    short_date_obj = datetime.strptime(short_date_string, "%d/%m/%Y - %H:%M")
+    parsed_short_date = short_date_obj.strftime("%Y-%m-%d")
+
+    return parsed_short_date
+
+# pt_BR: 'sábado, 5 de novembro de 2022 - 21:30' to 2022-11-05
+def parse_ptbr_date(date_string):
+    str_1 = date_string.replace(' de ', '-')
     str_2 = str_1.replace(' ', '')
     str_3 = str_2.split(',', 1)[1]
     str_4 = str_3.rsplit('-', 1)[0]
@@ -48,8 +54,9 @@ def parse_ptbr_date(str):
 
     return parsed_ptbr_date
 
-def parse_engb_date(str):
-    str_1 = str.replace(' ', '-')
+# en-GB: '05 November 2022 - 21:30' to 2022-11-05
+def parse_engb_date(date_string):
+    str_1 = date_string.replace(' ', '-')
     str_2 = str_1.rsplit('---', 1)[0]
 
     parsed_engb_date = datetime.strptime(str_2, '%d-%B-%Y').date()

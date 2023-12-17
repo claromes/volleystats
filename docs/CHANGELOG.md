@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.5](https://github.com/claromes/volleystats/releases/tag/0.5) - Dec 17 2023
+
+- Update Competition Matches
+    - Add Home Points
+    - Add Guest Points
+    - Add Date
+    - Add Location
+- Fix short date parse
+
 ### [0.4](https://github.com/claromes/volleystats/releases/tag/0.4) - Dec 17 2023
 
 - Add log argument
