@@ -4,8 +4,8 @@
     - [x] Competition ID
     - [x] Home Team
     - [x] Guest Team
-    - [ ] Home Points
-    - [ ] Guest Points
+    - [x] Home Points
+    - [x] Guest Points
     - [x] Date
     - [x] Location
 
