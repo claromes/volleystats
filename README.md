@@ -91,7 +91,7 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 
 ## Docs
 
-- [Command examples](https://github.com/claromes/volleystats/blob/main/docs/EXAMPLES.md)
+- [Usage examples](https://github.com/claromes/volleystats/blob/main/docs/EXAMPLES.md)
 - [Roadmap](https://github.com/claromes/volleystats/blob/main/docs/ROADMAP.md)
 - [Changelog](https://github.com/claromes/volleystats/blob/main/docs/CHANGELOG.md)
 
