@@ -11,6 +11,7 @@ class CompetitionMatchesSpider(scrapy.Spider):
     def __init__(self, fed_acronym='', competition_id='', **kwargs):
         self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/CompetitionMatches.aspx?ID={competition_id}']
         self.competition_id = competition_id
+        self.fed_acronym = fed_acronym
         match_id = ''
         match_date = ''
         home_team = ''
@@ -30,14 +31,7 @@ class CompetitionMatchesSpider(scrapy.Spider):
             match_id = re.search(r'mID=(\d+)', match_id_string).group(1)
 
             match_date_text = match.xpath("./div/div/div/p[1]/span[1]/text()").get()
-
-            ptBR = response.xpath("//*[contains(@class, 'RCB_Culture_pt-BR')]/span/input/@value").get()
-            enGB = response.xpath("//*[contains(@class, 'RCB_Culture_en-GB')]/span/input/@value").get()
-
-            if ptBR == 'PT':
-                match_date = parse_pt_br_short_date(match_date_text)
-            elif enGB == 'EN':
-                match_date = parse_engb_short_date(match_date_text)
+            match_date = parse_short_date(match_date_text)
 
             home_team = match.xpath("./div/div/div[5]/p/span/*/text() | ./div/div/div[5]/p/span/text()").get().lower()
             guest_team = match.xpath("./div/div/div[9]/p/span/*/text() | ./div/div/div[9]/p/span/text()").get().lower()
@@ -67,7 +61,7 @@ class CompetitionMatchesSpider(scrapy.Spider):
         
     def closed(spider, reason):
         src = 'data/competition_matches.csv'
-        dst = f'data/{spider.competition_id}-{spider.first_item_date}-{spider.last_item_date}-competition_matches.csv'
+        dst = f'data/{spider.competition_id}-{spider.fed_acronym}-{spider.first_item_date}-{spider.last_item_date}-competition_matches.csv'
 
         try:
             os.rename(src, dst)

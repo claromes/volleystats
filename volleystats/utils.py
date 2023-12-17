@@ -3,12 +3,12 @@ import re
 
 from datetime import datetime
 
-# pt_BR: '28/10/2022 - 19:30' to 2022-10-28
-def parse_pt_br_short_date(short_date_string):
+# '28/10/2022 - 19:30' to 2022-10-28
+def parse_short_date(short_date_string):
     short_date_obj = datetime.strptime(short_date_string, "%d/%m/%Y - %H:%M")
-    parsed_ptbr_short_date = short_date_obj.strftime("%Y-%m-%d")
+    parsed_short_date = short_date_obj.strftime("%Y-%m-%d")
 
-    return parsed_ptbr_short_date
+    return parsed_short_date
 
 # pt_BR: 'sábado, 5 de novembro de 2022 - 21:30' to 2022-11-05
 def parse_ptbr_date(date_string):
@@ -53,13 +53,6 @@ def parse_ptbr_date(date_string):
     parsed_ptbr_date = datetime.strptime(parsed_date, '%d-%B-%Y').date()
 
     return parsed_ptbr_date
-
-# en-GB: '2022/10/28 - 19:30' to 2022-10-28
-def parse_engb_short_date(short_date_string):
-    short_date_obj = datetime.strptime(short_date_string, "%Y/%m/%d - %H:%M")
-    parsed_engb_short_date = short_date_obj.strftime("%Y-%m-%d")
-
-    return parsed_engb_short_date
 
 # en-GB: '05 November 2022 - 21:30' to 2022-11-05
 def parse_engb_date(date_string):
