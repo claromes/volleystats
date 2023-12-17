@@ -41,8 +41,8 @@ def parse_ptbr_date(str):
     elif date_re_2 == 'dezembro':
         date_re_en = 'december'
 
-    var_date_re_2 = r'{}-'.format(re.escape(date_re_2))
-    parsed_date = re.sub(var_date_re_2, '{}-'.format(date_re_en), str_4)
+    var_date_re_2 = f'{re.escape(date_re_2)}-'
+    parsed_date = re.sub(var_date_re_2, f'{date_re_en}-', str_4)
 
     parsed_ptbr_date = datetime.strptime(parsed_date, '%d-%B-%Y').date()
 

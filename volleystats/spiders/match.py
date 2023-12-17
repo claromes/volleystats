@@ -55,14 +55,14 @@ class HomeStatsSpider(scrapy.Spider):
 
     def closed(spider, reason):
         src = 'data/home_stats.csv'
-        dst = 'data/{}-{}-home-{}.csv'.format(spider.match_id, spider.match_date, spider.home_team)
+        dst = f'data/{spider.match_id}-{spider.match_date}-home-{spider.home_team}.csv'
 
         try:
             os.rename(src, dst)
 
-            print('volleystats: {} file was created'.format(dst))
+            print(f'volleystats: {dst} file was created')
         except(FileExistsError):
-            print('volleystats: file {} already exists.\n{} was created or renamed'.format(dst, src))
+            print(f'volleystats: file {dst} already exists.\n{src} was created or renamed')
 
 class GuestStatsSpider(scrapy.Spider):
     name = 'guest_stats'
@@ -114,11 +114,11 @@ class GuestStatsSpider(scrapy.Spider):
 
     def closed(spider, reason):
         src = 'data/guest_stats.csv'
-        dst = 'data/{}-{}-guest-{}.csv'.format(spider.match_id, spider.match_date, spider.guest_team)
+        dst = f'data/{spider.match_id}-{spider.match_date}-guest-{spider.guest_team}.csv'
 
         try:
             os.rename(src, dst)
 
-            print('volleystats: {} file was created'.format(dst))
+            print(f'volleystats: {dst} file was created')
         except(FileExistsError):
-            print('volleystats: file {} already exists.\n{} was created or renamed'.format(dst, src))
+            print(f'volleystats: file {dst} already exists.\n{src} was created or renamed')

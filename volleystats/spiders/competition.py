@@ -33,11 +33,11 @@ class CompetitionMatchesSpider(scrapy.Spider):
 
     def closed(spider, reason):
         src = 'data/competition_matches.csv'
-        dst = 'data/{}_competition_matches.csv'.format(spider.competition_id)
+        dst = f'data/{spider.competition_id}_competition_matches.csv'
 
         try:
             os.rename(src, dst)
 
-            print('volleystats: {} file was created'.format(dst))
+            print(f'volleystats: {dst} file was created')
         except(FileExistsError):
-            print('volleystats: file {} already exists.\n{} was created or renamed'.format(dst, src))
+            print(f'volleystats: file {dst} already exists.\n{src} was created or renamed')
