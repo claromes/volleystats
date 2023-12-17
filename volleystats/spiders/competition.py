@@ -14,6 +14,7 @@ class CompetitionMatchesSpider(scrapy.Spider):
         self.fed_acronym = fed_acronym
         match_id = ''
         match_date = ''
+        match_location = ''
         home_team = ''
         guest_team = ''
         self.first_item_date = ''
@@ -33,12 +34,15 @@ class CompetitionMatchesSpider(scrapy.Spider):
             match_date_text = match.xpath("./div/div/div/p[1]/span[1]/text()").get()
             match_date = parse_short_date(match_date_text)
 
+            match_location = match.xpath("./div/div/div/p[2]/span/text()").get().lower()
+
             home_team = match.xpath("./div/div/div[5]/p/span/*/text() | ./div/div/div[5]/p/span/text()").get().lower()
             guest_team = match.xpath("./div/div/div[9]/p/span/*/text() | ./div/div/div[9]/p/span/text()").get().lower()
 
             competition = {
                 'Match ID': match_id,
                 'Match Date': match_date,
+                'Location': match_location,
                 'Home Team': home_team,
                 'Guest Team': guest_team
             }

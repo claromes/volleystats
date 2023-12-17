@@ -7,7 +7,7 @@
     - [ ] Home Points
     - [ ] Guest Points
     - [x] Date
-    - [ ] Location
+    - [x] Location
 
 - Match
     - [x] Match ID
