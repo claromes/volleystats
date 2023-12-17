@@ -6,7 +6,7 @@
     - [x] Guest Team
     - [ ] Home Points
     - [ ] Guest Points
-    - [ ] Date
+    - [x] Date
     - [ ] Location
 
 - Match

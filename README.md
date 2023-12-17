@@ -4,8 +4,7 @@
 
 CLI tool to get volleyball statistics from the Data Project Web Competition websites (WCM)
 
-> [!IMPORTANT]
-> This tool is not affiliated with Genius Sports Company
+**This tool is not affiliated with Genius Sports Company**
 
 ## Requirements
 
