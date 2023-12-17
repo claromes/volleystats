@@ -103,6 +103,12 @@ $ `volleystats --help`
 
 <br>
 
+### Log
+
+>Set logging.
+
+$ `volleystats --fed <Federation Acronym> [--match MATCH] [--comp COMP] --log`
+
 ## Federations and Leagues Acronym
 
 **European Volleyball**
@@ -226,6 +232,8 @@ $ `git clone git@github.com:claromes/volleystats.git`
 $ `cd volleystats`
 
 $ `pip install -r requirements.txt`
+
+$ `pip install --editable .`
 
 ## License
 
