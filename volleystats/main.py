@@ -22,9 +22,8 @@ ____________________|____-_ _|_______________,
       ',_____________________|______________________', v{version}
 '''
 
-# https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
-started_msg = '\x1b[6;30;42m' + '\n volleystats: started ' + '\x1b[0m\n'
-finished_msg = '\x1b[6;30;42m' + '\n volleystats: finished ' + '\x1b[0m\n'
+started_msg = '\nvolleystats: started'
+finished_msg = 'volleystats: finished'
 
 def main():
 	print(welcome_msg)
@@ -38,19 +37,20 @@ def main():
 	parser.add_argument(
 		'-f', '--fed',
 		dest='fed',
-		type=str,
 		required=True,
 		help='Federation Acronym'
 	)
 
-	parser.add_argument(
+	group = parser.add_mutually_exclusive_group(required=True)
+
+	group.add_argument(
 		'-m', '--match',
 		dest='match',
 		type=int,
 		help='Stats of a single match'
 	)
 
-	parser.add_argument(
+	group.add_argument(
 		'-c', '--comp',
 		dest='comp',
 		type=int,

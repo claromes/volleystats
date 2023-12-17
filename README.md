@@ -36,9 +36,9 @@ ____________________|____-_ _|_______________,
 
 volleystats: started
 
-volleystats: data/1623_22-10-28_home_fluminense.csv file was created!
+volleystats: data/1623_22-10-28_home_fluminense.csv file was created
 
-volleystats: data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created!
+volleystats: data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created
 
 volleystats: finished
 ```
@@ -107,7 +107,7 @@ $ `volleystats --help`
 
 >Set logging.
 
-$ `volleystats --fed <Federation Acronym> [--match MATCH] [--comp COMP] --log`
+$ `volleystats (--fed FED --match MATCH | --comp COMP) --log`
 
 ## Federations and Leagues Acronym
 
