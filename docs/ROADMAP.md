@@ -53,3 +53,11 @@
 - Block
     - [ ] Block Points by player
     - [ ] Totals
+
+- Feds, Confs and Leagues
+    - [x] European
+    - [x] South American
+    - [ ] Central American
+    - [ ] North American
+    - [ ] African
+    - [ ] Asian and Oceanian
