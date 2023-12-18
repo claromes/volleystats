@@ -2,7 +2,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/) [![License)](https://img.shields.io/github/license/claromes/volleystats)](https://github.com/claromes/volleystats/blob/main/LICENSE.md)
 
-CLI tool to get volleyball statistics from the Data Project Web Competition websites (WCM)
+CLI tool to scrape volleyball statistics from Data Project Web Competition websites (WCM)
 
 **This tool is not affiliated with Genius Sports Company**
 
@@ -28,7 +28,7 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 - `--log`, `-l`: View the logging during scraping
 - `--help`, `-h`: Show help
 
-## Federations and Leagues Acronym
+## Federations, Confederations and Leagues Acronym
 
 **European Volleyball**
 
@@ -77,7 +77,7 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 
     - /History?ID=`<Fed_ID>`
 
-    - /CompetitionHome?ID=`<Category_ID>` (*could be female and male, pro or young*)
+    - /CompetitionHome?ID=`<Category_ID>` (*could be Women and Men, Pro or Youth*)
 
     - /CompetitionMatches?ID=`<Competition_ID>`
 
