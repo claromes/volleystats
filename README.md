@@ -28,6 +28,21 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 - `--log`, `-l`: View the logging during scraping
 - `--help`, `-h`: Show help
 
+## Data Project Web Competition URLs
+
+- Hostname: `<Fed_Acronym>`-web.dataproject.com
+
+- Pathnames and search parameters:
+    - /MainHome
+
+    - /History?ID=`<Fed_ID>`
+
+    - /CompetitionHome?ID=`<Category_ID>` (*could be Women, Men, Pro or Youth*)
+
+    - /CompetitionMatches?ID=`<Competition_ID>`
+
+    - /MatchStatistics?mID=`<Match_ID>`&ID=`<Competition_ID>`
+
 ## Federations, Confederations and Leagues Acronym
 
 **European Volleyball**
@@ -67,21 +82,6 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 - `cbv`: Brazilian Volleyball Confederation
 - `fcv`: Cordoba Volleyball Federation
 - `fpdv`: Peruvian Volleyball Federation
-
-## Data Project Web Competition endpoints
-
-- Base URL: `<Fed_Acronym>`-web.dataproject.com
-
-- Endpoins:
-    - /MainHome
-
-    - /History?ID=`<Fed_ID>`
-
-    - /CompetitionHome?ID=`<Category_ID>` (*could be Women and Men, Pro or Youth*)
-
-    - /CompetitionMatches?ID=`<Competition_ID>`
-
-    - /MatchStatistics?mID=`<Match_ID>`&ID=`<Competition_ID>`
 
 ## Available Page Locales
 
