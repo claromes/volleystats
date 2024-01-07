@@ -15,10 +15,10 @@ setup(
     name='volleystats',
     version=version,
     author='Claromes',
-    description='CLI tool to get volleyball statistics from the Data Project Web Competition websites (WCM)',
+    description='Command-line tool to scrape volleyball statistics from Data Project Web Competition websites',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='volleyball sports cli dataset analytics',
+    keywords='volleyball sports command-line dataset analytics',
     url='https://github.com/claromes/volleystats',
     project_urls={
         'Documentation': 'https://claromes.github.io/volleystats',

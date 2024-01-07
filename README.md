@@ -87,6 +87,7 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 
 - pt-BR
 - en-GB
+- cs-CZ
 
 ## Docs
 

@@ -21,11 +21,14 @@ class HomeStatsSpider(scrapy.Spider):
 
         ptBR = response.xpath("//*[contains(@class, 'RCB_Culture_pt-BR')]/span/input/@value").get()
         enGB = response.xpath("//*[contains(@class, 'RCB_Culture_en-GB')]/span/input/@value").get()
+        csCZ = response.xpath("//*[contains(@class, 'RCB_Culture_cs-CZ')]/span/input/@value").get()
 
         if ptBR == 'PT':
             match_date = parse_ptbr_date(match_date_text)
         elif enGB == 'EN':
             match_date = parse_engb_date(match_date_text)
+        elif csCZ == 'CZ':
+            match_date = parse_cscz_date(match_date_text)
 
         home_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_HomeTeam']/text())").get().replace(' ', '-').lower()
         home_team = re.sub('[^A-Za-z0-9]+', '-', home_team_string)
@@ -80,11 +83,14 @@ class GuestStatsSpider(scrapy.Spider):
 
         ptBR = response.xpath("//*[contains(@class, 'RCB_Culture_pt-BR')]/span/input/@value").get()
         enGB = response.xpath("//*[contains(@class, 'RCB_Culture_en-GB')]/span/input/@value").get()
+        csCZ = response.xpath("//*[contains(@class, 'RCB_Culture_cs-CZ')]/span/input/@value").get()
 
         if ptBR == 'PT':
             match_date = parse_ptbr_date(match_date_text)
         elif enGB == 'EN':
             match_date = parse_engb_date(match_date_text)
+        elif csCZ == 'CZ':
+            match_date = parse_cscz_date(match_date_text)
 
         guest_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-').lower()
         guest_team = re.sub('[^A-Za-z0-9]+', '-', guest_team_string)
