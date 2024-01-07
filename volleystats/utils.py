@@ -20,8 +20,6 @@ def parse_ptbr_date(date_string):
     date_re_1 = re.search(r'-(\w+)-', str_4)
     date_re_2 = date_re_1.group(1)
 
-    date_re_en = ''
-
     if date_re_2 == 'janeiro':
         date_re_en = 'january'
     elif date_re_2 == 'fevereiro':
@@ -62,3 +60,45 @@ def parse_engb_date(date_string):
     parsed_engb_date = datetime.strptime(str_2, '%d-%B-%Y').date()
 
     return parsed_engb_date
+
+# cs-CZ: 'čtvrtek 26. října 2023 - 14:00' to 2023-10-26
+def parse_cscz_date(date_string):
+    str_1 = date_string.replace(' ', '-')
+    str_2 = str_1.rsplit('---', 1)[0]
+    str_3 = str_2.replace('.', '')
+    str_4 = str_3.split('-', 1)[1]
+
+    date_re_1 = re.search(r'-(\w+)-', str_4)
+    date_re_2 = date_re_1.group(1)
+
+    if date_re_2 == 'ledna':
+        date_re_en = 'January'
+    elif date_re_2 == 'února':
+        date_re_en = 'February'
+    elif date_re_2 == 'března':
+        date_re_en = 'March'
+    elif date_re_2 == 'dubna':
+        date_re_en = 'April'
+    elif date_re_2 == 'května':
+        date_re_en = 'May'
+    elif date_re_2 == 'června':
+        date_re_en = 'June'
+    elif date_re_2 == 'července':
+        date_re_en = 'July'
+    elif date_re_2 == 'srpna':
+        date_re_en = 'August'
+    elif date_re_2 == 'září':
+        date_re_en = 'September'
+    elif date_re_2 == 'října':
+        date_re_en = 'October'
+    elif date_re_2 == 'listopadu':
+        date_re_en = 'November'
+    elif date_re_2 == 'prosince':
+        date_re_en = 'December'
+
+    var_date_re_2 = f'{re.escape(date_re_2)}-'
+    parsed_date = re.sub(var_date_re_2, f'{date_re_en}-', str_4)
+
+    parsed_cscz_date = datetime.strptime(parsed_date, '%d-%B-%Y').date()
+
+    return parsed_cscz_date
