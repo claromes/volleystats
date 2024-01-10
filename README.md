@@ -2,7 +2,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/) [![License)](https://img.shields.io/github/license/claromes/volleystats)](https://github.com/claromes/volleystats/blob/main/LICENSE.md)
 
-CLI tool to scrape volleyball statistics from Data Project Web Competition websites (WCM)
+Command-line tool to scrape volleyball statistics from Data Project Web Competition websites (WCM)
 
 **This tool is not affiliated with Genius Sports Company**
 
@@ -82,12 +82,6 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 - `cbv`: Brazilian Volleyball Confederation
 - `fcv`: Cordoba Volleyball Federation
 - `fpdv`: Peruvian Volleyball Federation
-
-## Available Page Locales
-
-- pt-BR
-- en-GB
-- cs-CZ
 
 ## Docs
 

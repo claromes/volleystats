@@ -10,25 +10,23 @@ class HomeStatsSpider(scrapy.Spider):
 
     def __init__(self, fed_acronym='', match_id='', **kwargs):
         self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/MatchStatistics.aspx?mID={match_id}']
+        self.fed_acronym = fed_acronym
         self.match_id = match_id
         match_date = ''
         home_team = ''
 
         super().__init__(**kwargs)
 
+    def start_requests(self):        
+        cookies = {f'CompetitionLangCode{self.fed_acronym}': 'en-GB'}
+        yield scrapy.Request(self.start_urls[0], cookies=cookies, callback=self.parse)
+
     def parse(self, response):
         match_date_text = response.xpath("normalize-space(//span[@id='Content_Main_LB_DateTime']/text())").get()
-
-        ptBR = response.xpath("//*[contains(@class, 'RCB_Culture_pt-BR')]/span/input/@value").get()
         enGB = response.xpath("//*[contains(@class, 'RCB_Culture_en-GB')]/span/input/@value").get()
-        csCZ = response.xpath("//*[contains(@class, 'RCB_Culture_cs-CZ')]/span/input/@value").get()
 
-        if ptBR == 'PT':
-            match_date = parse_ptbr_date(match_date_text)
-        elif enGB == 'EN':
+        if enGB == 'EN':
             match_date = parse_engb_date(match_date_text)
-        elif csCZ == 'CZ':
-            match_date = parse_cscz_date(match_date_text)
 
         home_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_HomeTeam']/text())").get().replace(' ', '-').lower()
         home_team = re.sub('[^A-Za-z0-9]+', '-', home_team_string)
@@ -58,7 +56,7 @@ class HomeStatsSpider(scrapy.Spider):
 
     def closed(spider, reason):
         src = 'data/home_stats.csv'
-        dst = f'data/{spider.match_id}-{spider.match_date}-home-{spider.home_team}.csv'
+        dst = f'data/{spider.fed_acronym}-{spider.match_id}-{spider.match_date}-home-{spider.home_team}.csv'
 
         try:
             os.rename(src, dst)
@@ -72,25 +70,23 @@ class GuestStatsSpider(scrapy.Spider):
 
     def __init__(self, fed_acronym='', match_id='', **kwargs):
         self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/MatchStatistics.aspx?mID={match_id}']
+        self.fed_acronym = fed_acronym
         self.match_id = match_id
         match_date = ''
         guest_team = ''
 
         super().__init__(**kwargs)
 
+    def start_requests(self):        
+        cookies = {f'CompetitionLangCode{self.fed_acronym}': 'en-GB'}
+        yield scrapy.Request(self.start_urls[0], cookies=cookies, callback=self.parse)
+
     def parse(self, response):
         match_date_text = response.xpath("normalize-space(//span[@id='Content_Main_LB_DateTime']/text())").get()
-
-        ptBR = response.xpath("//*[contains(@class, 'RCB_Culture_pt-BR')]/span/input/@value").get()
         enGB = response.xpath("//*[contains(@class, 'RCB_Culture_en-GB')]/span/input/@value").get()
-        csCZ = response.xpath("//*[contains(@class, 'RCB_Culture_cs-CZ')]/span/input/@value").get()
 
-        if ptBR == 'PT':
-            match_date = parse_ptbr_date(match_date_text)
-        elif enGB == 'EN':
+        if enGB == 'EN':
             match_date = parse_engb_date(match_date_text)
-        elif csCZ == 'CZ':
-            match_date = parse_cscz_date(match_date_text)
 
         guest_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-').lower()
         guest_team = re.sub('[^A-Za-z0-9]+', '-', guest_team_string)
@@ -120,7 +116,7 @@ class GuestStatsSpider(scrapy.Spider):
 
     def closed(spider, reason):
         src = 'data/guest_stats.csv'
-        dst = f'data/{spider.match_id}-{spider.match_date}-guest-{spider.guest_team}.csv'
+        dst = f'data/{spider.fed_acronym}-{spider.match_id}-{spider.match_date}-guest-{spider.guest_team}.csv'
 
         try:
             os.rename(src, dst)
