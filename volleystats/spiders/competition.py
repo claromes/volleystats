@@ -24,6 +24,10 @@ class CompetitionMatchesSpider(scrapy.Spider):
 
         super().__init__(**kwargs)
 
+    def start_requests(self):        
+        cookies = {f'CompetitionLangCode{self.fed_acronym}': 'en-GB'}
+        yield scrapy.Request(self.start_urls[0], cookies=cookies, callback=self.parse)
+
     def parse(self, response):
         competition_items = []
 
@@ -72,7 +76,7 @@ class CompetitionMatchesSpider(scrapy.Spider):
         
     def closed(spider, reason):
         src = 'data/competition_matches.csv'
-        dst = f'data/{spider.competition_id}-{spider.fed_acronym}-{spider.first_item_date}-{spider.last_item_date}-competition_matches.csv'
+        dst = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.first_item_date}-{spider.last_item_date}-competition_matches.csv'
 
         try:
             os.rename(src, dst)
