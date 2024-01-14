@@ -87,7 +87,7 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
 
 - [Usage examples](https://github.com/claromes/volleystats/blob/main/docs/EXAMPLES.md)
 - [Roadmap](https://github.com/claromes/volleystats/blob/main/docs/ROADMAP.md)
-- [Changelog](https://github.com/claromes/volleystats/blob/main/docs/CHANGELOG.md)
+- [Changelog](https://github.com/claromes/volleystats/releases)
 
 ## Development
 
@@ -98,10 +98,6 @@ $ `cd volleystats`
 $ `pip install -r requirements.txt`
 
 $ `pip install --editable .`
-
-## License
-
-The package is licensed under the terms of the [GNU General Public License v3.0](https://github.com/claromes/volleystats/blob/main/LICENSE.md)
 
 ## Author
 
