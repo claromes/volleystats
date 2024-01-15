@@ -1,6 +1,6 @@
 # Volley Stats
 
-[![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/) [![License)](https://img.shields.io/github/license/claromes/volleystats)](https://github.com/claromes/volleystats/blob/main/LICENSE.md)
+[![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/)
 
 Command-line tool to scrape volleyball statistics from Data Project Web Competition websites (WCM)
 
