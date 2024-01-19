@@ -13,8 +13,8 @@ volleystats --fed FED --match MATCH
     - Command: $ `volleystats --fed cbv --match 1623`
     - Output files:
         ```
-        data/1623_22-10-28_home_fluminense.csv
-        data/1623_22-10-28_guest_barueri-volleyball-club.csv
+        data/cbv-1623-22-10-28-home-fluminense.csv
+        data/cbv-1623-22-10-28-guest-barueri-volleyball-club.csv
         ```
 
 - Lithuanian Volleyball Federation
@@ -24,9 +24,10 @@ volleystats --fed FED --match MATCH
     - Command: $ `volleystats --fed lvf --match 2093`
     - Output files:
         ```
-        data/2093_2022-11-23_guest_jonavos-sc.csv
-        data/2093_2022-11-23_home_svaja-viktorija-lsu.csv
+        data/lvf-2093-2022-11-23-guest-jonavos-sc.csv
+        data/lvf-2093-2022-11-23-home-svaja-viktorija-lsu.csv
         ```
+
 ### Competition Matches
 
 ```shell
@@ -38,9 +39,31 @@ volleystats --fed FED --comp COMP
     - Federation Acronym: CBV
     - Competition ID: 18
     - Command: $ `volleystats --fed cbv --comp 18`
+    - Output file:
+        ```
+        data/cbv-18-2022-2023-competition-matches.csv
+        ```
+
+### Matches via Competition Matches file
+
+```shell
+volleystats --fed FED --batch CSV_PATH_FILE
+```
+
+- Brazilian Volleyball Confederation
+    - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=ID
+    - Federation Acronym: CBV
+    - CSV batch file (output of the [Competition Matches](#competition-matches)): data/cbv-18-2022-2023-competition_matches.csv
+    - Command: $ `volleystats --fed cbv --batch data/cbv-18-2022-2023-competition_matches.csv`
     - Output files:
         ```
-        data/18_competition_matches.csv
+        data/cbv-1623-22-10-28-home-fluminense.csv
+        data/cbv-1623-22-10-28-guest-barueri-volleyball-club.csv
+        data/cbv-1618-2022-11-01-guest-energis-8-s-o-caetano.csv
+        data/cbv-1618-2022-11-01-home-esporte-clube-pinheiros.csv
+        data/cbv-1619-2022-11-01-guest-abel-moda-volei.csv
+        data/cbv-1619-2022-11-01-home-gerdau-minas.csv
+        ...
         ```
 
 ### Help
@@ -51,7 +74,7 @@ volleystats --help
 
 ### Log
 ```shell
-volleystats --fed FED (--match MATCH | --comp COMP) --log
+volleystats --fed FED (--match MATCH | --comp COMP | --batch CSV_PATH_FILE) --log
 ```
 
 ### Output messages
@@ -69,7 +92,7 @@ ____________________|____-_ _|_______________,
       ',_____________________|______________________',
 
 volleystats: started
-volleystats: data/1623_22-10-28_home_fluminense.csv file was created
-volleystats: data/1623_22-10-28_guest_barueri-volleyball-club.csv file was created
+volleystats: data/cbv-1623-22-10-28-home-fluminense.csv file was created
+volleystats: data/cbv-1623-22-10-28-guest-barueri-volleyball-club.csv file was created
 volleystats: finished
 ```

@@ -19,12 +19,13 @@ pip install volleystats
 ## Usage
 
 ```
-volleystats [--help] --fed FED (--match MATCH | --comp COMP) [--log]
+volleystats [--help] --fed FED (--match MATCH | --comp COMP | --batch CSV_PATH_FILE) [--log]
 ```
 
 - `--fed`, `-f`: Federation Acronym (required)
-- `--match`, `-m`: Statistics of a single match (required, unless `--comp` is provided)
-- `--comp`, `-c`: List of matches in a competition (required, unless `--match` is provided)
+- `--match`, `-m`: Statistics of a single match (required, unless `--comp` or `--batch` are provided)
+- `--comp`, `-c`: List of matches in a competition (required, unless `--match` or `--batch` are provided)
+- `--batch`, `-b`: Batch file with a CSV list of matches (output of the Competition Matches) (required, unless `--match` or `--comp` are provided)
 - `--log`, `-l`: View the logging during scraping
 - `--help`, `-h`: Show help
 
