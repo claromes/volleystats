@@ -2,11 +2,11 @@
 
 [![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/)
 
-Command-line tool to scrape volleyball statistics from Data Project Web Competition websites (WCM)
+Command-line tool to scrape volleyball statistics from Data Project Web Competition websites (WCM).
 
-**This tool is not affiliated with Genius Sports Company**
+**This tool is not affiliated with Genius Sports Italy.**
 
-## Requirements
+## Requirement
 
 - Python 3.8+
 
@@ -101,4 +101,4 @@ $ `pip install --editable .`
 
 ## Author
 
-Claromes ([GitHub](https://github.com/claromes))
+[Claromes](https://claromes.com)

@@ -18,10 +18,10 @@ setup(
     description='Command-line tool to scrape volleyball statistics from Data Project Web Competition websites',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='volleyball sports command-line dataset analytics',
+    keywords='volleyball sports command-line datasets analytics',
     url='https://github.com/claromes/volleystats',
     project_urls={
-        'Documentation': 'https://claromes.github.io/volleystats',
+        'Documentation': 'https://github.com/claromes/volleystats/blob/main/docs/EXAMPLES.md',
         'Issue Tracker': 'https://github.com/claromes/volleystats/issues',
     },
     packages=find_packages(exclude=['docs']),

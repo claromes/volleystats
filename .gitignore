@@ -2,7 +2,6 @@
 volleystats/__pycache__
 volleystats/spiders/__pycache__
 /data
-sample.txt
 
 # build
 /dist/
@@ -10,4 +9,4 @@ sample.txt
 /*.egg-info/
 
 # env
-/venv
+/.venv
