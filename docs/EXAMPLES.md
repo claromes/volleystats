@@ -47,14 +47,14 @@ volleystats --fed FED --comp COMP
 ### Matches via Competition Matches file
 
 ```shell
-volleystats --fed FED --batch CSV_PATH_FILE
+volleystats --fed FED --batch CSV_FILE_PATH
 ```
 
 - Brazilian Volleyball Confederation
     - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=ID
     - Federation Acronym: CBV
-    - CSV batch file (output of the [Competition Matches](#competition-matches)): data/cbv-18-2022-2023-competition_matches.csv
-    - Command: $ `volleystats --fed cbv --batch data/cbv-18-2022-2023-competition_matches.csv`
+    - CSV file path (output of the [Competition Matches](#competition-matches)): data/cbv-18-2022-2023-competition-matches.csv
+    - Command: $ `volleystats --fed cbv --batch data/cbv-18-2022-2023-competition-matches.csv`
     - Output files:
         ```
         data/cbv-1623-22-10-28-guest-barueri-volleyball-club.csv
@@ -74,7 +74,7 @@ volleystats --help
 
 ### Log
 ```shell
-volleystats --fed FED (--match MATCH | --comp COMP | --batch CSV_PATH_FILE) --log
+volleystats --fed FED (--match MATCH | --comp COMP | --batch CSV_FILE_PATH) --log
 ```
 
 ### Output messages

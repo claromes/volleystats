@@ -34,7 +34,7 @@ def main():
 	)
 
 	parser.add_argument(
-		'-f', '--fed',
+		'--fed', '-f',
 		dest='fed',
 		required=True,
 		help='Federation acronym: <Fed_Acronym>-web.dataproject.com'
@@ -43,32 +43,32 @@ def main():
 	group = parser.add_mutually_exclusive_group(required=True)
 
 	group.add_argument(
-		'-m', '--match',
+		'--match', '-m',
 		dest='match',
 		type=int,
 		help='ID of the match: <Fed_Acronym>-web.dataproject.com/MatchStatistics?mID=<Match_ID>'
 	)
 
 	group.add_argument(
-		'-c', '--comp',
+		'--comp', '-c',
 		dest='comp',
 		type=int,
 		help='ID of the competition: <Fed_Acronym>-web.dataproject.com/CompetitionMatches?ID=<Competition_ID>'
 	)
 
 	group.add_argument(
-		'-b', '--batch',
+		'--batch', '-b',
 		dest='batch',
 		type=str,
-		help='CSV batch file with Match IDs (Competition Matches output): data/<Fed_Acronym>-<Competition_ID>-<start_year>-<end_year>-competition-matches.csv'
+		help='CSV file path with Match IDs (Competition Matches output): data/<Fed_Acronym>-<Competition_ID>-<start_year>-<end_year>-competition-matches.csv'
 	)
 
 	parser.add_argument(
-		'-l', '--log',
+		'--log', '-l',
 		dest='log',
 		action='store_true',
 		required=False,
-		help='Output log'
+		help='View the logging during scraping'
 	)
 
 	args = vars(parser.parse_args())
