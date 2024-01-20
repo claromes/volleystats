@@ -40,7 +40,10 @@ class CompetitionMatchesSpider(scrapy.Spider):
             match_date_text = match.xpath("./div/div/div/p[1]/span[1]/text()").get()
             match_date = parse_short_date(match_date_text)
 
-            match_location = match.xpath("./div/div/div/p[2]/span[1]/text()").get().lower()
+            match_location = match.xpath("./div/div/div/p[2]/span[1]/text()").get()
+
+            if match_location is not None:
+                match_location.lower()
 
             home_team = match.xpath("./div/div/div[5]/p/span/*/text() | ./div/div/div[5]/p/span/text()").get().lower()
             home_points = match.xpath("./div/div/div[7]/p[1]/span[1]/b/text()").get()
