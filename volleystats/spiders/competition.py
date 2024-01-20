@@ -8,9 +8,10 @@ from ..utils import *
 class CompetitionMatchesSpider(scrapy.Spider):
     name = 'competition_matches'
 
-    def __init__(self, fed_acronym='', competition_id='', **kwargs):
-        self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/CompetitionMatches.aspx?ID={competition_id}']
+    def __init__(self, fed_acronym='', competition_id='', competition_pid='', **kwargs):
+        self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/CompetitionMatches.aspx?ID={competition_id}&PID={competition_pid}']
         self.competition_id = competition_id
+        self.competition_pid = competition_pid
         self.fed_acronym = fed_acronym
         match_id = ''
         match_date = ''
@@ -29,6 +30,8 @@ class CompetitionMatchesSpider(scrapy.Spider):
         yield scrapy.Request(self.start_urls[0], cookies=cookies, callback=self.parse)
 
     def parse(self, response):
+        print(self.start_urls)
+        print('------------------------------------------')
         competition_items = []
 
         matches = response.xpath("//div[@id='printableArea']/div/div/div/div/div[position() >= 1]/div[2]/div")
@@ -78,8 +81,12 @@ class CompetitionMatchesSpider(scrapy.Spider):
              self.last_item_date = match_final.group()
         
     def closed(spider, reason):
-        src = f'data/{spider.fed_acronym}-{spider.competition_id}-competition_matches.csv'
-        dst = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.first_item_date}-{spider.last_item_date}-competition-matches.csv'
+        src = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.competition_pid}-competition_matches.csv'
+
+        if spider.competition_pid != '':
+            spider.competition_pid = f'{spider.competition_pid}-'
+
+        dst = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.competition_pid}{spider.first_item_date}-{spider.last_item_date}-competition-matches.csv'
 
         try:
             os.rename(src, dst)

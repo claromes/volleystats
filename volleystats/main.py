@@ -64,6 +64,14 @@ def main():
 	)
 
 	parser.add_argument(
+		'--pid', '-p',
+		dest='pid',
+		type=int,
+		required=False,
+		help='PID of the competition: <Fed_Acronym>-web.dataproject.com/CompetitionMatches?ID=<Competition_ID>&PID=<Competition_PID>'
+	)
+
+	parser.add_argument(
 		'--log', '-l',
 		dest='log',
 		action='store_true',
@@ -98,20 +106,21 @@ def main():
 		match_process.start()
 
 		print(finished_msg)
-	elif args['comp']:
+	elif args['comp'] or (args['comp'] and args['pid']):
 		fed_acronym = args['fed']
 		competition_id = args['comp']
+		competition_pid = args['pid']
 
 		comp_process = CrawlerProcess(settings={
 			'FEEDS': {
-				'data/%(fed_acronym)s-%(competition_id)s-%(name)s.csv': {
+				'data/%(fed_acronym)s-%(competition_id)s-%(competition_pid)s-%(name)s.csv': {
 				'format': 'csv',
 				'overwrite': True
 				},
 			},
 		})
 
-		comp_process.crawl(CompetitionMatchesSpider, fed_acronym=fed_acronym, competition_id=competition_id)
+		comp_process.crawl(CompetitionMatchesSpider, fed_acronym=fed_acronym, competition_id=competition_id, competition_pid=competition_pid)
 		comp_process.start()
 
 		print(finished_msg)
