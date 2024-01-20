@@ -13,8 +13,8 @@ volleystats --fed FED --match MATCH
     - Command: $ `volleystats --fed cbv --match 1623`
     - Output files:
         ```
-        data/cbv-1623-22-10-28-home-fluminense.csv
         data/cbv-1623-22-10-28-guest-barueri-volleyball-club.csv
+        data/cbv-1623-22-10-28-home-fluminense.csv
         ```
 
 - Lithuanian Volleyball Federation
@@ -57,8 +57,8 @@ volleystats --fed FED --batch CSV_PATH_FILE
     - Command: $ `volleystats --fed cbv --batch data/cbv-18-2022-2023-competition_matches.csv`
     - Output files:
         ```
-        data/cbv-1623-22-10-28-home-fluminense.csv
         data/cbv-1623-22-10-28-guest-barueri-volleyball-club.csv
+        data/cbv-1623-22-10-28-home-fluminense.csv
         data/cbv-1618-2022-11-01-guest-energis-8-s-o-caetano.csv
         data/cbv-1618-2022-11-01-home-esporte-clube-pinheiros.csv
         data/cbv-1619-2022-11-01-guest-abel-moda-volei.csv

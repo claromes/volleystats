@@ -1,6 +1,4 @@
 import argparse
-import os
-import sys
 import logging
 import csv
 
@@ -62,7 +60,7 @@ def main():
 		'-b', '--batch',
 		dest='batch',
 		type=str,
-		help='CSV batch file (output of the Competition Matches): data/<Fed_Acronym>-<Competition_ID>-<start_year>-<end_year>-competition_matches.csv'
+		help='CSV batch file with Match IDs (Competition Matches output): data/<Fed_Acronym>-<Competition_ID>-<start_year>-<end_year>-competition-matches.csv'
 	)
 
 	parser.add_argument(
@@ -75,15 +73,6 @@ def main():
 
 	args = vars(parser.parse_args())
 
-	process = CrawlerProcess(settings={
-		'FEEDS': {
-			'data/%(name)s.csv': {
-			'format': 'csv',
-			'overwrite': True
-			},
-		},
-	})
-
 	print(started_msg)
 
 	logging.disable(logging.CRITICAL)
@@ -95,17 +84,35 @@ def main():
 		fed_acronym = args['fed']
 		match_id = args['match']
 
-		process.crawl(GuestStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
-		process.crawl(HomeStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
-		process.start()
+		match_process = CrawlerProcess(settings={
+			'FEEDS': {
+				'data/%(fed_acronym)s-%(match_id)s-%(name)s.csv': {
+				'format': 'csv',
+				'overwrite': True
+				},
+			},
+		})
+
+		match_process.crawl(HomeStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
+		match_process.crawl(GuestStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
+		match_process.start()
 
 		print(finished_msg)
 	elif args['comp']:
 		fed_acronym = args['fed']
 		competition_id = args['comp']
 
-		process.crawl(CompetitionMatchesSpider, fed_acronym=fed_acronym, competition_id=competition_id)
-		process.start()
+		comp_process = CrawlerProcess(settings={
+			'FEEDS': {
+				'data/%(fed_acronym)s-%(competition_id)s-%(name)s.csv': {
+				'format': 'csv',
+				'overwrite': True
+				},
+			},
+		})
+
+		comp_process.crawl(CompetitionMatchesSpider, fed_acronym=fed_acronym, competition_id=competition_id)
+		comp_process.start()
 
 		print(finished_msg)
 	elif args['batch']:
@@ -119,14 +126,23 @@ def main():
 			for row in csv_reader:
 				match_ids.append(row['Match ID'])
 
+		batch_process = CrawlerProcess(settings={
+			'FEEDS': {
+				'data/%(fed_acronym)s-%(match_id)s-%(name)s.csv': {
+				'format': 'csv',
+				'overwrite': True
+				},
+			},
+		})
+
 		for match_id in match_ids:
 			match_id_started_msg = f'\nvolleystats: starting {match_id}...'
 			print(match_id_started_msg)
 
-			process.crawl(GuestStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
-			process.crawl(HomeStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
+			batch_process.crawl(HomeStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
+			batch_process.crawl(GuestStatsSpider, fed_acronym=fed_acronym, match_id=match_id)
 
-		process.start()
+		batch_process.start()
 		print(finished_msg)
 
 if __name__ == '__main__':

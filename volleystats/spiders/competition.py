@@ -75,8 +75,8 @@ class CompetitionMatchesSpider(scrapy.Spider):
              self.last_item_date = match_final.group()
         
     def closed(spider, reason):
-        src = 'data/competition_matches.csv'
-        dst = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.first_item_date}-{spider.last_item_date}-competition_matches.csv'
+        src = f'data/{spider.fed_acronym}-{spider.competition_id}-competition_matches.csv'
+        dst = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.first_item_date}-{spider.last_item_date}-competition-matches.csv'
 
         try:
             os.rename(src, dst)
