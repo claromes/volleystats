@@ -30,8 +30,6 @@ class CompetitionMatchesSpider(scrapy.Spider):
         yield scrapy.Request(self.start_urls[0], cookies=cookies, callback=self.parse)
 
     def parse(self, response):
-        print(self.start_urls)
-        print('------------------------------------------')
         competition_items = []
 
         matches = response.xpath("//div[@id='printableArea']/div/div/div/div/div[position() >= 1]/div[2]/div")

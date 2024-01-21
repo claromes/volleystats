@@ -201,7 +201,7 @@ volleystats: finished
 
     - /CompetitionHome?ID=`<Category_ID>` (*could be Women, Men, Pro or Youth, e.g.*)
 
-    - /CompetitionMatches?ID=`<Competition_ID>`PID=`<PID>` (*PID could be regular season or playoffs, e.g.*)
+    - /CompetitionMatches?ID=`<Competition_ID>`&PID=`<PID>` (*PID could be regular season or playoffs, e.g.*)
 
     - /MatchStatistics?mID=`<Match_ID>`&ID=`<Competition_ID>`
 
