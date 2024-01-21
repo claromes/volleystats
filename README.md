@@ -37,6 +37,8 @@ pip install volleystats
 - [Federations, Confederations and Leagues Acronym](#federations-confederations-and-leagues-acronym)
     - European Volleyball
     - South American Volleyball
+- [Troubleshooting](#troubleshooting)
+    - [Match files collected from batch file](#match-files-collected-from-batch-file)
 
 ## Usage
 
@@ -241,7 +243,7 @@ Abbreviations for the main entities that use WCM.
 
 ## Troubleshooting
 
-### Matches via Competition Matches file
+### Match files collected from batch file
 
 In some cases, empty files may be returned, usually named as `<fed_acronym>-<match_id>-guest_stats.csv` and `<fed_acronym>-<match_id>-home_stats.csv`. This can happen due to the hiding of a match in the competition listing, either because it was canceled or incorrectly entered. The match is hidden from view, but it remains accessible in the HTML, causing the tool to return an empty file. In such cases, simply ignore and delete this file.
 
