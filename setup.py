@@ -23,8 +23,9 @@ setup(
     keywords='volleyball sports command-line datasets analytics',
     url='https://github.com/claromes/volleystats',
     project_urls={
-        'Documentation': 'https://github.com/claromes/volleystats#usage',
-        'Issue Tracker': 'https://github.com/claromes/volleystats/issues',
+        'Documentation': 'https://github.com/claromes/volleystats#documentation',
+        'Releases': 'https://github.com/claromes/volleystats/releases',
+        'Bug Tracker': 'https://github.com/claromes/volleystats/issues'
     },
     packages=find_packages(exclude=['docs']),
     classifiers=[
