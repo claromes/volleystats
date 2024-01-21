@@ -24,17 +24,19 @@ pip install volleystats
 
 - [Usage](#usage)
 - [Usage examples](#usage-examples)
-    - [Match]()
-    - [Competition Matches]()
-    - [Competition Matches with PID]()
-    - [Matches via Competition Matches file]()
-    - [Help]()
-    - [Log]()
-    - [Output messages]()
-- [Data Project Web Competition URLs structure]()
-    - [Hostname]()
-    - [Pathnames and search parameters]()
-- [Federations, Confederations and Leagues Acronym]()
+    - [Match](#match)
+    - [Competition Matches](#competition-matches)
+    - [Competition Matches with PID](#competition-matches-with-pid)
+    - [Matches via Competition Matches file](#matches-via-competition-matches-file)
+    - [Help](#help)
+    - [Log](#log)
+    - [Output messages](#output-messages)
+- [Data Project Web Competition URLs structure](#data-project-web-competition-urls-structure)
+    - Hostname
+    - Pathnames and search parameters
+- [Federations, Confederations and Leagues Acronym](#federations-confederations-and-leagues-acronym)
+    - European Volleyball
+    - South American Volleyball
 
 ## Usage
 
