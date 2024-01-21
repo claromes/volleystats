@@ -239,6 +239,12 @@ Abbreviations for the main entities that use WCM.
 - `fcv`: Cordoba Volleyball Federation
 - `fpdv`: Peruvian Volleyball Federation
 
+## Troubleshooting
+
+### Matches via Competition Matches file
+
+In some cases, empty files may be returned, usually named as `<fed_acronym>-<match_id>-guest_stats.csv` and `<fed_acronym>-<match_id>-home_stats.csv`. This can happen due to the hiding of a match in the competition listing, either because it was canceled or incorrectly entered. The match is hidden from view, but it remains accessible in the HTML, causing the tool to return an empty file. In such cases, simply ignore and delete this file.
+
 ## Development
 
 $ `git clone git@github.com:claromes/volleystats.git`
