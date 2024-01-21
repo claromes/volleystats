@@ -54,13 +54,13 @@ volleystats [--help] --fed FED (--match MATCH | --comp COMP | --batch CSV_FILE_P
 - `--log`, `-l`: View the logging during scraping
 - `--help`, `-h`: Show help message
 
-## Usage examples
-
 ### Match
 
 ```shell
 volleystats --fed FED --match MATCH
 ```
+
+#### Examples
 
 - Brazilian Volleyball Confederation
     - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=1623
@@ -90,6 +90,8 @@ volleystats --fed FED --match MATCH
 volleystats --fed FED --comp COMP
 ```
 
+#### Example
+
 - Brazilian Volleyball Confederation
     - Data Project website: https://cbv-web.dataproject.com/CompetitionMatches.aspx?ID=18
     - Federation Acronym: CBV
@@ -107,6 +109,8 @@ In some competitions, PID can be used to distinguish between seasons, such as re
 ```shell
 volleystats --fed FED --comp COMP --pid PID
 ```
+
+#### Examples
 
 - Bundesliga
     - Data Project website: https://vbl-web.dataproject.com/CompetitionMatches.aspx?ID=162&PID=173
@@ -136,6 +140,8 @@ volleystats --fed FED --comp COMP --pid PID
 ```shell
 volleystats --fed FED --batch CSV_FILE_PATH
 ```
+
+#### Example
 
 - Brazilian Volleyball Confederation
     - Data Project website: https://cbv-web.dataproject.com/MatchStatistics.aspx?mID=ID
@@ -200,8 +206,6 @@ volleystats: finished
     - /MatchStatistics?mID=`<Match_ID>`&ID=`<Competition_ID>`
 
 ## Federations, Confederations and Leagues Acronym
-
-Abbreviations for the main entities that use WCM.
 
 **European Volleyball**
 
