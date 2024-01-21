@@ -2,11 +2,11 @@
 
 [![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/)
 
-Command-line tool to scrape volleyball statistics from Data Project Web Competition websites (WCM).
+Command-line tool to scrape volleyball statistics from Data Project Web Competition websites.
 
-Volley Stats facilitates the export of CSV data from volleyball matches and competitions hosted by entities using the Data Project. The tool streamlines the collection of individual matches, match lists, and automates individual match retrieval from the competition list.
+Volley Stats facilitates the export of data in CSV format of volleyball matches and competitions organized by entities that use Data Project WCM. The tool streamlines the collection of individual matches, match lists, and automates the retrieval of individual match data from the competition matches list.
 
-Additionally, it provides the structure of URLs for Web Competition websites, simplifying the search for identifiers (mID, ID, PID). It also supplies acronyms for the main entities utilizing Data Project Management.
+Additionally, it documents the structure of URLs for Web Competition websites, simplifying the search for identifiers (mID, ID, PID), and also supplies acronyms for the main entities utilizing Data Project Management.
 
 **This tool is not affiliated with Genius Sports Italy.**
 
@@ -209,41 +209,39 @@ volleystats: finished
 
 **European Volleyball**
 
-- `fshv`: Albanian Volleyball Federation
-- `osbih`: Bosnia and Herzegovina Volleyball Federation
-- `bvf`: Bulgarian Volleyball Federation
-- `bvl`: Baltic League
-- `vbl`: Bundesliga
-- `hos`: Croatian Volleyball Federation
-- `cvf`: Czech Volleyball Federation
-- `dvbf`: Danish Volleyball Federation
-- `evf`: Estonian Volleyball Federation
-- `fbf`: Faroe Islands Volleyball Association
-- `eope`: Hellenic Volleyball Federation
-- `hvf`: Hungary Volleyball Federation
-- `bli`: Icelandic Volleyball Association
-- `iva`: Israel Volleyball Association
-- `fipav`: Italian Volleyball Federation
-- `lvf`: Lithuanian Volleyball Federation
-- `mva`: Malta Volleyball Association
-- `nvbf`: Norwegian Volleyball Federation
-- `fpv`: Portuguese Volleyball Federation
-- `frv`: Romanian Volleyball Federation
-- `ossrb`: Serbian Volleyball Federation
-- `svf`: Slovak Volleyball Federation
-- `ozs`: Slovenian Volleyball Federation
-- `rfevb`: Spanish Volleyball Federation
-- `svbf`: Swedish Volleyball Federation
-- `swi`: Swiss Volley
-- `tvf`: Turkish Volleyball Federation
-- `pvlu`: Professional Volleyball League of Ukraine
+- `fshv`: [Albanian Volleyball Federation](https://fshv-web.dataproject.com/MainHome.aspx)
+- `osbih`: [Bosnia and Herzegovina Volleyball Federation](https://osbih-web.dataproject.com/MainHome.aspx)
+- `bvf`: [Bulgarian Volleyball Federation](https://bvf-web.dataproject.com/MainHome.aspx)
+- `bvl`: [Baltic League](https://bvl-web.dataproject.com/MainHome.aspx)
+- `vbl`: [Bundesliga](https://vbl-web.dataproject.com/MainHome.aspx)
+- `hos`: [Croatian Volleyball Federation](https://hos-web.dataproject.com/MainHome.aspx)
+- `cvf`: [Czech Volleyball Federation](https://cvf-web.dataproject.com/MainHome.aspx)
+- `evf`: [Estonian Volleyball Federation](https://evf-web.dataproject.com/MainHome.aspx)
+- `fbf`: [Faroe Islands Volleyball Association](https://fbf-web.dataproject.com/MainHome.aspx)
+- `eope`: [Hellenic Volleyball Federation](https://eope-web.dataproject.com/MainHome.aspx)
+- `hvf`: [Hungary Volleyball Federation](https://hvf-web.dataproject.com/MainHome.aspx)
+- `bli`: [Icelandic Volleyball Association](https://bli-web.dataproject.com/MainHome.aspx)
+- `iva`: [Israel Volleyball Association](https://iva-web.dataproject.com/MainHome.aspx)
+- `lvf`: [Lithuanian Volleyball Federation](https://lvf-web.dataproject.com/MainHome.aspx)
+- `mva`: [Malta Volleyball Association](https://mva-web.dataproject.com/MainHome.aspx)
+- `nvbf`: [Norwegian Volleyball Federation](https://nvbf-web.dataproject.com/MainHome.aspx)
+- `fpv`: [Portuguese Volleyball Federation](https://fpv-web.dataproject.com/MainHome.aspx)
+- `frv`: [Romanian Volleyball Federation](https://frv-web.dataproject.com/MainHome.aspx)
+- `ossrb`: [Serbian Volleyball Federation](https://ossrb-web.dataproject.com/MainHome.aspx)
+- `svf`: [Slovak Volleyball Federation](https://svf-web.dataproject.com/MainHome.aspx)
+- `ozs`: [Slovenian Volleyball Federation](https://ozs-web.dataproject.com/MainHome.aspx)
+- `rfevb`: [Spanish Volleyball Federation](https://rfevb-web.dataproject.com/MainHome.aspx)
+- `svbf`: [Swedish Volleyball Federation](https://svbf-web.dataproject.com/MainHome.aspx)
+- `swi`: [Swiss Volley](https://swi-web.dataproject.com/MainHome.aspx)
+- `tvf`: [Turkish Volleyball Federation](https://tvf-web.dataproject.com/MainHome.aspx)
+- `pvlu`: [Professional Volleyball League of Ukraine](https://pvlu-web.dataproject.com/MainHome.aspx)
 
 **South American Volleyball**
 
-- `feva`: Argentine Volleyball Federation
-- `cbv`: Brazilian Volleyball Confederation
-- `fcv`: Cordoba Volleyball Federation
-- `fpdv`: Peruvian Volleyball Federation
+- `feva`: [Argentine Volleyball Federation](https://feva-web.dataproject.com/MainHome.aspx)
+- `cbv`: [Brazilian Volleyball Confederation](https://cbv-web.dataproject.com/MainHome.aspx)
+- `fcv`: [Cordoba Volleyball Federation](https://fcv-web.dataproject.com/MainHome.aspx)
+- `fpdv`: [Peruvian Volleyball Federation](https://fpdv-web.dataproject.com/MainHome.aspx)
 
 ## Troubleshooting
 
