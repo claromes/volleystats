@@ -100,7 +100,7 @@ volleystats --fed FED --comp COMP
 
 ### Competition Matches with PID
 
- In some competitions, PID can be used to distinguish between seasons, such as regular season and playoffs. Therefore, it is necessary to submit this value to obtain statistics separately.
+In some competitions, PID can be used to distinguish between seasons, such as regular season and playoffs. Therefore, it is necessary to submit this value to obtain statistics separately.
 
 ```shell
 volleystats --fed FED --comp COMP --pid PID
@@ -117,7 +117,7 @@ volleystats --fed FED --comp COMP --pid PID
         ```
         data/vbl-162-173-2022-2023-competition-matches.csv
         ```
-
+    ---
     - Data Project website: https://vbl-web.dataproject.com/CompetitionMatches.aspx?ID=162&PID=174
     - Federation Acronym: VBL
     - Competition ID: 162
