@@ -83,8 +83,12 @@ class CompetitionMatchesSpider(scrapy.Spider):
     def closed(spider, reason):
         src = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.competition_pid}-competition_matches.csv'
 
-        if spider.competition_pid != '':
+        if spider.competition_pid != None:
             spider.competition_pid = f'{spider.competition_pid}-'
+
+        if spider.competition_pid == None:
+            spider.competition_pid = ''
+
 
         dst = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.competition_pid}{spider.first_item_date}-{spider.last_item_date}-competition-matches.csv'
 
