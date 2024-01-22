@@ -1,7 +1,6 @@
 import scrapy
 import os
 import re
-import sys
 
 from ..utils import *
 
