@@ -8,9 +8,10 @@ from ..utils import *
 class CompetitionMatchesSpider(scrapy.Spider):
     name = 'competition_matches'
 
-    def __init__(self, fed_acronym='', competition_id='', **kwargs):
-        self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/CompetitionMatches.aspx?ID={competition_id}']
+    def __init__(self, fed_acronym='', competition_id='', competition_pid='', **kwargs):
+        self.start_urls = [f'https://{fed_acronym}-web.dataproject.com/CompetitionMatches.aspx?ID={competition_id}&PID={competition_pid}']
         self.competition_id = competition_id
+        self.competition_pid = competition_pid
         self.fed_acronym = fed_acronym
         match_id = ''
         match_date = ''
@@ -40,7 +41,10 @@ class CompetitionMatchesSpider(scrapy.Spider):
             match_date_text = match.xpath("./div/div/div/p[1]/span[1]/text()").get()
             match_date = parse_short_date(match_date_text)
 
-            match_location = match.xpath("./div/div/div/p[2]/span[1]/text()").get().lower()
+            match_location = match.xpath("./div/div/div/p[2]/span[1]/text()").get()
+
+            if match_location:
+                match_location = match_location.lower()
 
             home_team = match.xpath("./div/div/div[5]/p/span/*/text() | ./div/div/div[5]/p/span/text()").get().lower()
             home_points = match.xpath("./div/div/div[7]/p[1]/span[1]/b/text()").get()
@@ -75,8 +79,16 @@ class CompetitionMatchesSpider(scrapy.Spider):
              self.last_item_date = match_final.group()
         
     def closed(spider, reason):
-        src = 'data/competition_matches.csv'
-        dst = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.first_item_date}-{spider.last_item_date}-competition_matches.csv'
+        src = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.competition_pid}-competition_matches.csv'
+
+        if spider.competition_pid != None:
+            spider.competition_pid = f'{spider.competition_pid}-'
+
+        if spider.competition_pid == None:
+            spider.competition_pid = ''
+
+
+        dst = f'data/{spider.fed_acronym}-{spider.competition_id}-{spider.competition_pid}{spider.first_item_date}-{spider.last_item_date}-competition-matches.csv'
 
         try:
             os.rename(src, dst)

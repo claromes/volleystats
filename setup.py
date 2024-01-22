@@ -15,14 +15,17 @@ setup(
     name='volleystats',
     version=version,
     author='Claromes',
+    author_email='support@claromes.com',
     description='Command-line tool to scrape volleyball statistics from Data Project Web Competition websites',
+    license='GPLv3',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    keywords='volleyball sports command-line dataset analytics',
+    keywords='volleyball sports command-line datasets analytics',
     url='https://github.com/claromes/volleystats',
     project_urls={
-        'Documentation': 'https://claromes.github.io/volleystats',
-        'Issue Tracker': 'https://github.com/claromes/volleystats/issues',
+        'Documentation': 'https://github.com/claromes/volleystats#documentation',
+        'Releases': 'https://github.com/claromes/volleystats/releases',
+        'Bug Tracker': 'https://github.com/claromes/volleystats/issues'
     },
     packages=find_packages(exclude=['docs']),
     classifiers=[

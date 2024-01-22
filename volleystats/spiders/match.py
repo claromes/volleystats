@@ -55,7 +55,7 @@ class HomeStatsSpider(scrapy.Spider):
         self.home_team = home_team
 
     def closed(spider, reason):
-        src = 'data/home_stats.csv'
+        src = f'data/{spider.fed_acronym}-{spider.match_id}-home_stats.csv'
         dst = f'data/{spider.fed_acronym}-{spider.match_id}-{spider.match_date}-home-{spider.home_team}.csv'
 
         try:
@@ -115,7 +115,7 @@ class GuestStatsSpider(scrapy.Spider):
         self.guest_team = guest_team
 
     def closed(spider, reason):
-        src = 'data/guest_stats.csv'
+        src = f'data/{spider.fed_acronym}-{spider.match_id}-guest_stats.csv'
         dst = f'data/{spider.fed_acronym}-{spider.match_id}-{spider.match_date}-guest-{spider.guest_team}.csv'
 
         try:
