@@ -23,7 +23,6 @@ pip install volleystats
 # Documentation
 
 - [Usage](#usage)
-- [Usage examples](#usage-examples)
     - [Match](#match)
     - [Competition Matches](#competition-matches)
     - [Competition Matches with PID](#competition-matches-with-pid)
