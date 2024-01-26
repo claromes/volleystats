@@ -240,23 +240,30 @@ volleystats: finished
 
     - /MatchStatistics?mID=`<Match_ID>`&ID=`<Competition_ID>`
 
-## Federations, Confederations and Leagues Acronym
+## Federations, Confederations and Leagues Acronyms
 
 **European Volleyball**
 
 - `fshv`: [Albanian Volleyball Federation](https://fshv-web.dataproject.com/MainHome.aspx)
+- `bvl`: [Baltic League](https://bvl-web.dataproject.com/MainHome.aspx)
+- `bevl`: [Belgium Volleyball Federation](https://bevl-web.dataproject.com/MainHome.aspx)
 - `osbih`: [Bosnia and Herzegovina Volleyball Federation](https://osbih-web.dataproject.com/MainHome.aspx)
 - `bvf`: [Bulgarian Volleyball Federation](https://bvf-web.dataproject.com/MainHome.aspx)
-- `bvl`: [Baltic League](https://bvl-web.dataproject.com/MainHome.aspx)
 - `vbl`: [Bundesliga](https://vbl-web.dataproject.com/MainHome.aspx)
 - `hos`: [Croatian Volleyball Federation](https://hos-web.dataproject.com/MainHome.aspx)
 - `cvf`: [Czech Volleyball Federation](https://cvf-web.dataproject.com/MainHome.aspx)
 - `evf`: [Estonian Volleyball Federation](https://evf-web.dataproject.com/MainHome.aspx)
 - `fbf`: [Faroe Islands Volleyball Association](https://fbf-web.dataproject.com/MainHome.aspx)
+- `lml`: [Finland Volleyball League](https://lml-web.dataproject.com/MainHome.aspx)
 - `eope`: [Hellenic Volleyball Federation](https://eope-web.dataproject.com/MainHome.aspx)
+- `hvl`: [Hellenic Volleyball League](https://hvl-web.dataproject.com/MainHome.aspx)
 - `hvf`: [Hungary Volleyball Federation](https://hvf-web.dataproject.com/MainHome.aspx)
 - `bli`: [Icelandic Volleyball Association](https://bli-web.dataproject.com/MainHome.aspx)
 - `iva`: [Israel Volleyball Association](https://iva-web.dataproject.com/MainHome.aspx)
+- `fipav`: [Italian Volleyball Federation](https://fipav-web.dataproject.com/MainHome.aspx)
+- `vfrk`: [Volleyball Federation of Republic of Kazakhstan](https://vfrk-web.dataproject.com/MainHome.aspx)
+- `latvf`: [Latvian Volleyball Federation](https://latvf-web.dataproject.com/MainHome.aspx)
+- `lnv`: [Ligue Nationale de Volley](https://lnv-web.dataproject.com/MainHome.aspx)
 - `lvf`: [Lithuanian Volleyball Federation](https://lvf-web.dataproject.com/MainHome.aspx)
 - `mva`: [Malta Volleyball Association](https://mva-web.dataproject.com/MainHome.aspx)
 - `nvbf`: [Norwegian Volleyball Federation](https://nvbf-web.dataproject.com/MainHome.aspx)
@@ -269,6 +276,7 @@ volleystats: finished
 - `svbf`: [Swedish Volleyball Federation](https://svbf-web.dataproject.com/MainHome.aspx)
 - `swi`: [Swiss Volley](https://swi-web.dataproject.com/MainHome.aspx)
 - `tvf`: [Turkish Volleyball Federation](https://tvf-web.dataproject.com/MainHome.aspx)
+- `uvf`: [Ukrainian Volleyball Federation](https://uvf-web.dataproject.com/MainHome.aspx)
 - `pvlu`: [Professional Volleyball League of Ukraine](https://pvlu-web.dataproject.com/MainHome.aspx)
 
 **South American Volleyball**
