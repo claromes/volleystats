@@ -41,14 +41,19 @@ class CompetitionMatchesSpider(scrapy.Spider):
             match_date = parse_short_date(match_date_text)
 
             match_location = match.xpath("./div/div/div/p[2]/span[1]/text()").get()
-
             if match_location:
                 match_location = match_location.lower()
 
-            home_team = match.xpath("./div/div/div[5]/p/span/*/text() | ./div/div/div[5]/p/span/text()").get().lower()
+            home_team = match.xpath("./div/div/div[5]/p/span/*/text() | ./div/div/div[5]/p/span/text()").get()
+            if home_team:
+                home_team = home_team.lower()
+
             home_points = match.xpath("./div/div/div[7]/p[1]/span[1]/b/text()").get()
 
-            guest_team = match.xpath("./div/div/div[9]/p/span/*/text() | ./div/div/div[9]/p/span/text()").get().lower()
+            guest_team = match.xpath("./div/div/div[9]/p/span/*/text() | ./div/div/div[9]/p/span/text()").get()
+            if guest_team:
+                guest_team = guest_team.lower()
+
             guest_points = match.xpath("./div/div/div[7]/p[1]/span[3]/b/text()").get()
 
             competition = {

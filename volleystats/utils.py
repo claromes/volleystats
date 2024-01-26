@@ -23,8 +23,8 @@ def parse_engb_date(date_string):
     return parsed_engb_date
 
 # (coach: schimtz guilherme) to schimtz guilherme
-def parse_coach(string):
+def parse_coach(coach_name):
     regex = re.compile(r'\(coach: |\)')
-    coach = regex.sub('', string)
+    coach = regex.sub('', coach_name)
 
     return coach

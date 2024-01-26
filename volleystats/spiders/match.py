@@ -27,19 +27,27 @@ class HomeStatsSpider(scrapy.Spider):
         if enGB == 'EN':
             match_date = parse_engb_date(match_date_text)
 
-        home_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_HomeTeam']/text())").get().replace(' ', '-').lower()
+        home_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_HomeTeam']/text())").get().replace(' ', '-')
         home_team = re.sub('[^A-Za-z0-9]+', '-', home_team_string)
+        if home_team:
+            home_team = home_team.lower()
 
-        coach = response.xpath("//span[@id='Content_Main_ctl17_RP_MatchStats_Coach_Home_0']/text()").get().lower()
-        coach = parse_coach(coach)
+        coach = response.xpath("//span[@id='Content_Main_ctl17_RP_MatchStats_Coach_Home_0']/text()").get()
+        if coach:
+            coach = coach.lower()
+            coach = parse_coach(coach)
 
-        location = response.xpath("//span[@id='Content_Main_LB_Stadium']/text()").get().lower()
+        location = response.xpath("//span[@id='Content_Main_LB_Stadium']/text()").get()
+        if location:
+            location = location.lower()
 
         home_players = response.xpath("//div[@id='Content_Main_ctl17_RP_MatchStats_RPL_MatchStats_0']/div[3]/div/div/table/tbody/tr")
 
         for player in home_players:
             player_number = player.xpath('./td[1]/p/span/text()').get()
-            player_name = player.xpath('./td[2]/p/span/b/text()').get().lower()
+            player_name = player.xpath('./td[2]/p/span/b/text()').get()
+            if player_name:
+                player_name = player_name.lower()
 
             points_tot = player.xpath('./td[8]/p/span/text()').get()
             points_BP = player.xpath('./td[9]/p/span/text()').get()
@@ -125,19 +133,27 @@ class GuestStatsSpider(scrapy.Spider):
         if enGB == 'EN':
             match_date = parse_engb_date(match_date_text)
 
-        guest_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-').lower()
+        guest_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-')
         guest_team = re.sub('[^A-Za-z0-9]+', '-', guest_team_string)
+        if guest_team:
+            guest_team = guest_team.lower()
 
-        coach = response.xpath("//span[@id='Content_Main_ctl17_RP_MatchStats_Coach_Guest_0']/text()").get().lower()
-        coach = parse_coach(coach)
+        coach = response.xpath("//span[@id='Content_Main_ctl17_RP_MatchStats_Coach_Guest_0']/text()").get()
+        if coach:
+            coach = coach.lower()
+            coach = parse_coach(coach)
 
-        location = response.xpath("//span[@id='Content_Main_LB_Stadium']/text()").get().lower()
+        location = response.xpath("//span[@id='Content_Main_LB_Stadium']/text()").get()
+        if location:
+            location = location.lower()
 
         guest_players = response.xpath("//div[@id='Content_Main_ctl17_RP_MatchStats_RPL_MatchStats_0']/div[5]/div/div/table/tbody/tr")
 
         for player in guest_players:
             player_number = player.xpath('./td[1]/p/span/text()').get()
-            player_name = player.xpath('./td[2]/p/span/b/text()').get().lower()
+            player_name = player.xpath('./td[2]/p/span/b/text()').get()
+            if player_name:
+                player_name = player_name.lower()
 
             points_tot = player.xpath('./td[8]/p/span/text()').get()
             points_BP = player.xpath('./td[9]/p/span/text()').get()
