@@ -14,13 +14,10 @@
     - [x] Match date
     - [x] Home Team
     - [x] Guest Team
-    - [ ] Coach
-    - [ ] Location
+    - [x] Coach
+    - [x] Location
     - [ ] Final result
     - [ ] Result per SET
-
-- Vote
-    - [ ] Vote by player
 
 - Points
     - [x] Total Points by player
@@ -30,29 +27,29 @@
     - [x] Totals
 
 - Serve
-    - [ ] Total Serves by player
-    - [ ] Serve Erros by player
-    - [ ] Serve Points by player
-    - [ ] Totals
+    - [x] Total Serves by player
+    - [x] Serve Erros by player
+    - [x] Serve Points by player
+    - [x] Totals
 
 - Reception
-    - [ ] Total Receptions by player
-    - [ ] Reception Erros by player
-    - [ ] Positive Pass Percentage by player
-    - [ ] Excellent/ Perfect Pass Percentage by player
-    - [ ] Totals
+    - [x] Total Receptions by player
+    - [x] Reception Erros by player
+    - [x] Positive Pass Percentage by player
+    - [x] Excellent/ Perfect Pass Percentage by player
+    - [x] Totals
 
 - Attack
-    - [ ] Total Attacks by player
-    - [ ] Attack Erros by player
-    - [ ] Blocked Attack by player
-    - [ ] Attack Points by player
-    - [ ] Attack Points Percentage by player
-    - [ ] Totals
+    - [x] Total Attacks by player
+    - [x] Attack Erros by player
+    - [x] Blocked Attack by player
+    - [x] Attack Points by player
+    - [x] Attack Points Percentage by player
+    - [x] Totals
 
 - Block
-    - [ ] Block Points by player
-    - [ ] Totals
+    - [x] Block Points by player
+    - [x] Totals
 
 - Feds, Confs and Leagues
     - [x] European

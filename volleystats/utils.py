@@ -1,3 +1,4 @@
+import re
 from datetime import datetime
 
 # '28/10/2022 - 19:30' or '28.10.2022 - 19:30' to 2022-10-28
@@ -20,3 +21,10 @@ def parse_engb_date(date_string):
     parsed_engb_date = datetime.strptime(str_2, '%d-%B-%Y').date()
 
     return parsed_engb_date
+
+# (coach: schimtz guilherme) to schimtz guilherme
+def parse_coach(string):
+    regex = re.compile(r'\(coach: |\)')
+    coach = regex.sub('', string)
+
+    return coach
