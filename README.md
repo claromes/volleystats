@@ -22,6 +22,7 @@ pip install volleystats
 
 # Documentation
 
+- [Extracted Data](#extracted-data)
 - [Usage](#usage)
     - [Match](#match)
     - [Competition Matches](#competition-matches)
@@ -38,6 +39,41 @@ pip install volleystats
     - South American Volleyball
 - [Troubleshooting](#troubleshooting)
     - [Match files collected from batch file](#match-files-collected-from-batch-file)
+
+## Extracted Data
+
+- Competition
+    - Competition ID
+    - Home Team
+    - Guest Team
+    - Home Points
+    - Guest Points
+    - Date
+    - Location
+
+- Match
+    - Match ID
+    - Match date
+    - Home Team
+    - Guest Team
+    - Coach
+    - Location
+    - Total Points
+    - Break Points
+    - Win-Lost
+    - Total Serves
+    - Serve Erros
+    - Serve Points
+    - Total Receptions
+    - Reception Erros
+    - Positive Pass Percentage (Pos%)
+    - Excellent/ Perfect Pass Percentage (Exc.%)
+    - Total Attacks
+    - Attack Erros
+    - Blocked Attack
+    - Attack Points (Exc.)
+    - Attack Points Percentage (Exc.%)
+    - Block Points
 
 ## Usage
 
