@@ -49,7 +49,7 @@ pip install volleystats
     - Home Points
     - Guest Points
     - Date
-    - Location
+    - Stadium
 
 - Match
     - Match ID
@@ -57,7 +57,7 @@ pip install volleystats
     - Home Team
     - Guest Team
     - Coach
-    - Location
+    - Stadium
     - Total Points
     - Break Points
     - Win-Lost
