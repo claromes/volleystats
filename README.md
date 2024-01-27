@@ -49,7 +49,7 @@ pip install volleystats
     - Home Points
     - Guest Points
     - Date
-    - Location
+    - Stadium
 
 - Match
     - Match ID
@@ -57,7 +57,7 @@ pip install volleystats
     - Home Team
     - Guest Team
     - Coach
-    - Location
+    - Stadium
     - Total Points
     - Break Points
     - Win-Lost
@@ -104,7 +104,7 @@ volleystats --fed FED --match MATCH
     - Command: $ `volleystats --fed cbv --match 1623`
     - Output files:
         ```
-        data/cbv-1623-22-10-28-guest-barueri-volleyball-club.csv
+        data/cbv-1623-22-10-28-guest-baruerivolleyballclub.csv
         data/cbv-1623-22-10-28-home-fluminense.csv
         ```
 
@@ -115,7 +115,7 @@ volleystats --fed FED --match MATCH
     - Command: $ `volleystats --fed lvf --match 2093`
     - Output files:
         ```
-        data/lvf-2093-2022-11-23-guest-jonavos-sc.csv
+        data/lvf-2093-2022-11-23-guest-jonavossc.csv
         data/lvf-2093-2022-11-23-home-svaja-viktorija-lsu.csv
         ```
 
@@ -185,12 +185,12 @@ volleystats --fed FED --batch CSV_FILE_PATH
     - Command: $ `volleystats --fed cbv --batch data/cbv-18-2022-2023-competition-matches.csv`
     - Output files:
         ```
-        data/cbv-1623-22-10-28-guest-barueri-volleyball-club.csv
+        data/cbv-1623-22-10-28-guest-baruerivolleyballclub.csv
         data/cbv-1623-22-10-28-home-fluminense.csv
-        data/cbv-1618-2022-11-01-guest-energis-8-s-o-caetano.csv
-        data/cbv-1618-2022-11-01-home-esporte-clube-pinheiros.csv
-        data/cbv-1619-2022-11-01-guest-abel-moda-volei.csv
-        data/cbv-1619-2022-11-01-home-gerdau-minas.csv
+        data/cbv-1618-2022-11-01-guest-energis8sãocaetano.csv
+        data/cbv-1618-2022-11-01-home-esporteclubepinheiros.csv
+        data/cbv-1619-2022-11-01-guest-abelmodavolei.csv
+        data/cbv-1619-2022-11-01-home-gerdauminas.csv
         ...
         ```
 
@@ -221,7 +221,7 @@ ____________________|____-_ _|_______________,
 
 volleystats: started
 volleystats: data/cbv-1623-22-10-28-home-fluminense.csv file was created
-volleystats: data/cbv-1623-22-10-28-guest-barueri-volleyball-club.csv file was created
+volleystats: data/cbv-1623-22-10-28-guest-baruerivolleyballclub.csv file was created
 volleystats: finished
 ```
 
