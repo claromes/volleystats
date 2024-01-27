@@ -59,7 +59,7 @@ class CompetitionMatchesSpider(scrapy.Spider):
             competition = {
                 'Match ID': match_id,
                 'Match Date': match_date,
-                'Location': match_location,
+                'Stadium': match_location,
                 'Home Team': home_team,
                 'Home Points': home_points,
                 'Guest Team': guest_team,
