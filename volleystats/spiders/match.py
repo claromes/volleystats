@@ -13,6 +13,7 @@ class HomeStatsSpider(scrapy.Spider):
         self.match_id = match_id
         match_date = ''
         home_team = ''
+        home_team_file = ''
 
         super().__init__(**kwargs)
 
@@ -27,10 +28,10 @@ class HomeStatsSpider(scrapy.Spider):
         if enGB == 'EN':
             match_date = parse_engb_date(match_date_text)
 
-        home_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_HomeTeam']/text())").get().replace(' ', '-')
-        home_team = re.sub('[^A-Za-z0-9]+', '-', home_team_string)
-        if home_team:
-            home_team = home_team.lower()
+        home_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_HomeTeam']/text())").get()
+        if home_team_string:
+            home_team = home_team_string.lower()
+            home_team_file = re.sub(' ', '', home_team)
 
         coach = response.xpath("//span[@id='Content_Main_ctl17_RP_MatchStats_Coach_Home_0']/text()").get()
         if coach:
@@ -98,10 +99,11 @@ class HomeStatsSpider(scrapy.Spider):
 
         self.match_date = match_date
         self.home_team = home_team
+        self.home_team_file = home_team_file
 
     def closed(spider, reason):
         src = f'data/{spider.fed_acronym}-{spider.match_id}-home_stats.csv'
-        dst = f'data/{spider.fed_acronym}-{spider.match_id}-{spider.match_date}-home-{spider.home_team}.csv'
+        dst = f'data/{spider.fed_acronym}-{spider.match_id}-{spider.match_date}-home-{spider.home_team_file}.csv'
 
         try:
             os.rename(src, dst)
@@ -119,6 +121,7 @@ class GuestStatsSpider(scrapy.Spider):
         self.match_id = match_id
         match_date = ''
         guest_team = ''
+        guest_team_file = ''
 
         super().__init__(**kwargs)
 
@@ -133,10 +136,10 @@ class GuestStatsSpider(scrapy.Spider):
         if enGB == 'EN':
             match_date = parse_engb_date(match_date_text)
 
-        guest_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get().replace(' ', '-')
-        guest_team = re.sub('[^A-Za-z0-9]+', '-', guest_team_string)
-        if guest_team:
-            guest_team = guest_team.lower()
+        guest_team_string = response.xpath("normalize-space(//span[@id='Content_Main_LBL_GuestTeam']/text())").get()
+        if guest_team_string:
+            guest_team = guest_team_string.lower()
+            guest_team_file = re.sub(' ', '', guest_team)
 
         coach = response.xpath("//span[@id='Content_Main_ctl17_RP_MatchStats_Coach_Guest_0']/text()").get()
         if coach:
@@ -204,10 +207,11 @@ class GuestStatsSpider(scrapy.Spider):
 
         self.match_date = match_date
         self.guest_team = guest_team
+        self.guest_team_file = guest_team_file
 
     def closed(spider, reason):
         src = f'data/{spider.fed_acronym}-{spider.match_id}-guest_stats.csv'
-        dst = f'data/{spider.fed_acronym}-{spider.match_id}-{spider.match_date}-guest-{spider.guest_team}.csv'
+        dst = f'data/{spider.fed_acronym}-{spider.match_id}-{spider.match_date}-guest-{spider.guest_team_file}.csv'
 
         try:
             os.rename(src, dst)
