@@ -1,6 +1,6 @@
 # Volley Stats
 
-[![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats/)
+[![PyPI](https://img.shields.io/pypi/v/volleystats)](https://pypi.org/project/volleystats) [![PyPI](https://img.shields.io/pypi/dm/volleystats.svg)](https://pypistats.org/packages/volleystats)
 
 Command-line tool to scrape volleyball statistics from Data Project Web Competition websites.
 
